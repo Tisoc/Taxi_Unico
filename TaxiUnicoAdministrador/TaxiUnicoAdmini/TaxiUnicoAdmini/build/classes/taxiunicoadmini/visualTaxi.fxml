@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="491.0" prefWidth="908.0" style="-fx-background-color: #40caee;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="taxiunicoadmini.AltaClienteController">
+   <children>
+      <Text fill="#faf6f6" layoutX="441.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Visualizar Taxista" underline="true" wrappingWidth="304.88555908203125">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Text>
+      <Button layoutX="441.0" layoutY="372.0" mnemonicParsing="false" onAction="#cambiarAltTaxi" prefHeight="40.0" prefWidth="180.0" text="Agregar Nuevo Taxista" />
+      <ImageView fitHeight="33.0" fitWidth="186.0" layoutX="708.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/logotrans.png" />
+         </image>
+      </ImageView>
+      <AnchorPane prefHeight="508.0" prefWidth="200.0" style="-fx-background-color: grey;">
+         <children>
+            <AnchorPane layoutY="62.0" opacity="0.33" prefHeight="67.0" prefWidth="200.0" style="-fx-background-color: black;">
+               <effect>
+                  <InnerShadow />
+               </effect></AnchorPane>
+            <AnchorPane layoutY="186.0" opacity="0.33" prefHeight="67.0" prefWidth="200.0" style="-fx-background-color: black;">
+               <effect>
+                  <InnerShadow />
+               </effect></AnchorPane>
+            <AnchorPane layoutY="317.0" opacity="0.33" prefHeight="61.0" prefWidth="200.0" style="-fx-background-color: black;">
+               <effect>
+                  <InnerShadow />
+               </effect></AnchorPane>
+            <Button layoutX="15.0" layoutY="14.0" mnemonicParsing="false" onAction="#verConfig" prefHeight="32.0" prefWidth="169.0" style="-fx-background-color: #40caee;" text="Configuración">
+               <font>
+                  <Font name="Book Antiqua" size="15.0" />
+               </font></Button>
+            <AnchorPane layoutY="437.0" opacity="0.33" prefHeight="76.0" prefWidth="200.0" style="-fx-background-color: black;">
+               <effect>
+                  <InnerShadow />
+               </effect></AnchorPane>
+            <Button layoutX="15.0" layoutY="144.0" mnemonicParsing="false" onAction="#changeScreenButtonPushed" prefHeight="32.0" prefWidth="169.0" style="-fx-background-color: #40caee;" text="Ver Clientes">
+               <font>
+                  <Font name="Book Antiqua" size="15.0" />
+               </font></Button>
+            <Button layoutX="15.0" layoutY="268.0" mnemonicParsing="false" onAction="#cambiarVisTaxi" prefHeight="32.0" prefWidth="169.0" style="-fx-background-color: #40caee;" text="Ver Taxistas">
+               <font>
+                  <Font name="Book Antiqua" size="15.0" />
+               </font></Button>
+            <Button layoutX="15.0" layoutY="391.0" mnemonicParsing="false" onAction="#verHistorial" prefHeight="32.0" prefWidth="169.0" style="-fx-background-color: #40caee;" text="Historial de Viajes">
+               <font>
+                  <Font name="Book Antiqua" size="15.0" />
+               </font></Button>
+         </children>
+      </AnchorPane>
+      <Text layoutX="470.0" layoutY="471.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Algun problema?" wrappingWidth="199.99999856948853">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Text>
+      <Text layoutX="465.0" layoutY="493.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contacta a un Superior" underline="true" wrappingWidth="209.46484375" />
+      <Button layoutX="808.0" layoutY="465.0" mnemonicParsing="false" onAction="#salirApp" opacity="0.99" prefHeight="30.0" prefWidth="85.0" style="-fx-background-color: red;" text="Salir">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="50.0" fitWidth="141.0" layoutX="200.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/logotaxi.png" />
+         </image>
+      </ImageView>
+      <TableView layoutX="212.0" layoutY="143.0" prefHeight="200.0" prefWidth="682.0">
+        <columns>
+          <TableColumn prefWidth="75.0" text="Nombre" />
+          <TableColumn prefWidth="75.0" text="Apellido" />
+            <TableColumn prefWidth="75.0" text="Correo" />
+            <TableColumn prefWidth="75.0" text="Telefono" />
+            <TableColumn prefWidth="75.0" text="Marca" />
+            <TableColumn prefWidth="77.60001220703123" text="Modelo" />
+            <TableColumn prefWidth="75.0" text="Placas" />
+            <TableColumn prefWidth="75.0" text="Color" />
+            <TableColumn prefWidth="75.0" text="Rating" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
