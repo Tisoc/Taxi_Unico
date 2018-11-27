@@ -5,6 +5,7 @@
  */
 package taxiunicoadmini;
 
+import clases.Cliente;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -18,10 +19,17 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import java.sql.*;
+import java.time.LocalDate;
+import java.time.Month;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.scene.control.PasswordField;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import taxiunicoadmini.dbconnection.DBConnection;
 
 /**
@@ -33,6 +41,34 @@ public class FXMLDocumentController implements Initializable {
     Connection connection = connectionClass.getConnection();
     @FXML TextField username;
     @FXML PasswordField password;
+    
+    //columnas 
+    @FXML
+    private TableView<Cliente> tableView = new TableView<>();
+    @FXML
+    private TableColumn<Cliente, String> clientName = new TableColumn<>();
+    @FXML
+    private TableColumn<Cliente, String> clientEmail = new TableColumn<>();
+    @FXML
+    private TableColumn<Cliente, String> clientTelephone = new TableColumn<>();
+    @FXML
+    private TableColumn<Cliente, String> clientUser = new TableColumn<>();
+    @FXML
+    private TableColumn<Cliente, String> clientStatus = new TableColumn<>();
+    @FXML
+    private TableColumn<Cliente, String> clientRating = new TableColumn<>();
+    
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        // TODO
+        clientName.setCellValueFactory(new PropertyValueFactory<>("clientName"));
+        clientEmail.setCellValueFactory(new PropertyValueFactory<>("clientEmail"));
+        clientTelephone.setCellValueFactory(new PropertyValueFactory<>("clientTelephone"));
+        clientUser.setCellValueFactory(new PropertyValueFactory<>("clientUser"));
+        clientStatus.setCellValueFactory(new PropertyValueFactory<>("clientStatus"));
+        clientRating.setCellValueFactory(new PropertyValueFactory<>("clientRating"));
+        tableView.setItems(getClientInfo());
+    }
     
   public void changeScreenButtonPushed(ActionEvent event) throws IOException
     {
@@ -181,10 +217,17 @@ public class FXMLDocumentController implements Initializable {
           Logger.getLogger(FXMLDocumentController.class.getName()).log(Level.SEVERE, null, ex);
       }
     }  
-           
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
     
+    public ObservableList<Cliente> getClientInfo() {
+
+        ObservableList<Cliente> clientes = FXCollections.observableArrayList();
+        clientes.add(new Cliente("Frank Sinatra", "123@gmail.com", "8110252558", "franksin", true, 4.1));
+        clientes.add(new Cliente("Frank Sinatra", "123@gmail.com", "8110252558", "franksin", true, 4.1));
+        clientes.add(new Cliente("Frank Sinatra", "123@gmail.com", "8110252558", "franksin", true, 4.1));
+        clientes.add(new Cliente("Frank Sinatra", "123@gmail.com", "8110252558", "franksin", true, 4.1));
+        clientes.add(new Cliente("Frank Sinatra", "123@gmail.com", "8110252558", "franksin", true, 4.1));
+
+        return clientes;
+
+    }    
 }

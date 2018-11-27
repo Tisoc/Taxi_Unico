@@ -75,15 +75,14 @@
             <Image url="@../img/logotaxi.png" />
          </image>
       </ImageView>
-      <TableView layoutX="231.0" layoutY="145.0" prefHeight="200.0" prefWidth="662.0">
+      <TableView fx:id="tableView" layoutX="231.0" layoutY="145.0" prefHeight="200.0" prefWidth="662.0">
         <columns>
-          <TableColumn prefWidth="97.59991455078125" text="Nombre" />
-          <TableColumn prefWidth="93.60003662109375" text="Apellido" />
-            <TableColumn prefWidth="88.80001831054688" text="Correo" />
-            <TableColumn prefWidth="90.4000244140625" text="Telefono" />
-            <TableColumn prefWidth="96.7999267578125" text="Usuario" />
-            <TableColumn prefWidth="95.2000732421875" text="Estatus" />
-            <TableColumn prefWidth="110.39990234375" text="Rating" />
+          <TableColumn fx:id="clientName" prefWidth="134.0" text="Nombre" />
+            <TableColumn fx:id="clientEmail" prefWidth="119.0" text="Correo" />
+            <TableColumn fx:id="clientTelephone" prefWidth="87.0" text="Telefono" />
+            <TableColumn fx:id="clientUser" prefWidth="121.0" text="Usuario" />
+            <TableColumn fx:id="clientStatus" prefWidth="117.0" text="Estatus" />
+            <TableColumn fx:id="clientRating" prefWidth="83.0" text="Rating" />
         </columns>
       </TableView>
    </children>
