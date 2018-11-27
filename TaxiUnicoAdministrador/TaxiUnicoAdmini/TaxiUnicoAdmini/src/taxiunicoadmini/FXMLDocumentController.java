@@ -17,6 +17,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
+import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import taxiunicoadmini.dbconnection.DBConnection;
 
 /**
  *
@@ -118,6 +122,36 @@ public class FXMLDocumentController implements Initializable {
         window.show();
     }    
     
+    public void prueba(ActionEvent event) throws IOException
+    {
+        DBConnection connectionClass = new DBConnection();
+        Connection connection = connectionClass.getConnection();
+        
+      try {
+          //prepare statement
+          CallableStatement statement = connection.prepareCall("{call view_clientes()}");
+          
+          //call stored procedure
+          statement.execute();
+          ResultSet resultSet = statement.getResultSet();
+          ResultSetMetaData rsmd = resultSet.getMetaData();
+          int columnsNumber = rsmd.getColumnCount();
+          while (resultSet.next()) {
+              for (int i = 1; i <= columnsNumber; i++) {
+                  if (i > 1) {
+                      System.out.print(",  ");
+                  }
+                  String columnValue = resultSet.getString(i);
+                  System.out.print(columnValue + " " + rsmd.getColumnName(i));
+              }
+              System.out.println("");
+          }
+          
+      } catch (SQLException ex) {
+          Logger.getLogger(FXMLDocumentController.class.getName()).log(Level.SEVERE, null, ex);
+      }
+    }  
+           
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO

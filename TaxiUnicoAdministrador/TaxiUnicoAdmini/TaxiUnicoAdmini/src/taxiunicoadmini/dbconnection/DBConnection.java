@@ -24,13 +24,15 @@ public class DBConnection {
         
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            connection = DriverManager.getConnection("jdbc:mysql://localhost/"+dbName,userName,password);
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/"+dbName+
+                    "?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=CST",
+                    userName,password);
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(DBConnection.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
             Logger.getLogger(DBConnection.class.getName()).log(Level.SEVERE, null, ex);
         }
      
-        return null;
+        return connection;
     }
 }
