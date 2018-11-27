@@ -20,6 +20,8 @@ import javafx.stage.Stage;
 import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 import taxiunicoadmini.dbconnection.DBConnection;
 
 /**
@@ -27,17 +29,45 @@ import taxiunicoadmini.dbconnection.DBConnection;
  * @author Alvaro Marquez
  */
 public class FXMLDocumentController implements Initializable {
+    DBConnection connectionClass = new DBConnection();
+    Connection connection = connectionClass.getConnection();
+    @FXML TextField username;
+    @FXML PasswordField password;
     
   public void changeScreenButtonPushed(ActionEvent event) throws IOException
     {
-        Parent tableViewParent = FXMLLoader.load(getClass().getResource("visualClien.fxml"));
-        Scene tableViewScene = new Scene(tableViewParent);
-        
-        //This line gets the Stage information
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-        
-        window.setScene(tableViewScene);
-        window.show();
+        try {
+            //obtener texto de user text box 
+            String user = username.getText();
+            String pass = password.getText();
+            
+            //preparar para procedimiento almacenado
+            CallableStatement statement = connection.prepareCall("{call get_Usuario_Contrasena_Admin(?)}");
+            statement.setString(1, user);
+
+            //llamar procedimiento almacenado
+            statement.execute();
+            ResultSet resultSet = statement.getResultSet();
+            if(resultSet.next()){
+                String valid_pass = resultSet.getString(2);//nos da la password
+
+                System.out.println("pass:" + pass + "  " + "valid_pass:" + valid_pass);
+                if (valid_pass.equals(pass)) {
+                    System.out.println("im in");
+                    Parent tableViewParent = FXMLLoader.load(getClass().getResource("visualClien.fxml"));
+                    Scene tableViewScene = new Scene(tableViewParent);
+
+                    //This line gets the Stage information
+                    Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+                    window.setScene(tableViewScene);
+                    window.show();
+                }
+            }
+            //else muestra mensaje de error
+        } catch (SQLException ex) {
+            Logger.getLogger(FXMLDocumentController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
       public void cambiarAltaClie(ActionEvent event) throws IOException
