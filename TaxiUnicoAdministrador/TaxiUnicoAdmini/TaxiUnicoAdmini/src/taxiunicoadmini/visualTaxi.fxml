@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="491.0" prefWidth="908.0" style="-fx-background-color: #40caee;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="taxiunicoadmini.AltaClienteController">
+<AnchorPane id="AnchorPane" prefHeight="491.0" prefWidth="908.0" style="-fx-background-color: #40caee;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="taxiunicoadmini.VisualTaxiController">
    <children>
       <Text fill="#faf6f6" layoutX="441.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Visualizar Taxista" underline="true" wrappingWidth="304.88555908203125">
          <font>
@@ -75,17 +75,17 @@
             <Image url="@../img/logotaxi.png" />
          </image>
       </ImageView>
-      <TableView layoutX="212.0" layoutY="143.0" prefHeight="200.0" prefWidth="682.0">
+      <TableView fx:id="tableView" layoutX="212.0" layoutY="143.0" prefHeight="200.0" prefWidth="682.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="Nombre" />
-          <TableColumn prefWidth="75.0" text="Apellido" />
-            <TableColumn prefWidth="75.0" text="Correo" />
-            <TableColumn prefWidth="75.0" text="Telefono" />
+          <TableColumn fx:id="taxistaName" prefWidth="75.0" text="Nombre" />
+            <TableColumn fx:id="taxistaEmail" prefWidth="75.0" text="Correo" />
+            <TableColumn fx:id="taxistaTelephone" prefWidth="75.0" text="Telefono" />
             <TableColumn prefWidth="75.0" text="Marca" />
             <TableColumn prefWidth="77.60001220703123" text="Modelo" />
             <TableColumn prefWidth="75.0" text="Placas" />
             <TableColumn prefWidth="75.0" text="Color" />
-            <TableColumn prefWidth="75.0" text="Rating" />
+            <TableColumn fx:id="taxistaRating" prefWidth="75.0" text="Rating" />
+            <TableColumn fx:id="taxistaStatus" prefWidth="75.0" text="Estatus" />
         </columns>
       </TableView>
    </children>

@@ -15,6 +15,24 @@ public class Taxista{
 	private String Nombre;
 	private String Correo;
 	private String Telefono;
+        private boolean Estatus;
+
+    public Taxista(String Usuario, String Nombre, String Correo, String Telefono, boolean Estatus, double Rating) {
+        this.Usuario = Usuario;
+        this.Nombre = Nombre;
+        this.Correo = Correo;
+        this.Telefono = Telefono;
+        this.Estatus = Estatus;
+        this.Rating = Rating;
+    }
+
+    public boolean isEstatus() {
+        return Estatus;
+    }
+
+    public void setEstatus(boolean Estatus) {
+        this.Estatus = Estatus;
+    }
 	private double Rating;
 
 	public String getUsuario(){

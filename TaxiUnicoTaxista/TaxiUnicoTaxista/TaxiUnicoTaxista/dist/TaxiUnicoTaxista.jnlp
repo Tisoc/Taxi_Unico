@@ -8,7 +8,8 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="TaxiUnicoTaxista.jar" size="309116" download="eager" />
+    <jar href="TaxiUnicoTaxista.jar" size="311494" download="eager" />
+    <jar href="lib\mysql-connector-java-8.0.13.jar" size="2132635" download="eager" />
   </resources>
   <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="TaxiUnicoTaxista" >
     <param name="requiredFXVersion" value="8.0+"/>
