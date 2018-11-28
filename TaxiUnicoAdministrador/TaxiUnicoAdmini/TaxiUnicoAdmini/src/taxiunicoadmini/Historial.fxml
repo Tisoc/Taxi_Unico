@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="491.0" prefWidth="908.0" style="-fx-background-color: #40caee;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="taxiunicoadmini.AltaClienteController">
+<AnchorPane id="AnchorPane" prefHeight="513.0" prefWidth="947.0" style="-fx-background-color: #40caee;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="taxiunicoadmini.HistorialController">
    <children>
       <Text fill="#faf6f6" layoutX="471.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Historial de Viajes" underline="true" wrappingWidth="304.88555908203125">
          <font>
@@ -74,16 +74,24 @@
             <Image url="@../img/logotaxi.png" />
          </image>
       </ImageView>
-      <TableView layoutX="209.0" layoutY="145.0" prefHeight="250.0" prefWidth="734.0">
+      <TableView fx:id="tableViewViaje" layoutX="596.0" layoutY="160.0" prefHeight="250.0" prefWidth="339.0">
         <columns>
-          <TableColumn prefWidth="83.20001220703125" text="Cliente" />
-          <TableColumn prefWidth="96.800048828125" text="Taxista" />
-            <TableColumn prefWidth="92.0" text="Origen" />
-            <TableColumn prefWidth="92.80007934570312" text="Destino" />
-            <TableColumn prefWidth="68.800048828125" text="Fecha" />
-            <TableColumn prefWidth="82.40008544921875" text="Estatus" />
-            <TableColumn prefWidth="107.2000732421875" text="Rating Cliente" />
-            <TableColumn prefWidth="104.7999267578125" text="Rating Taxista" />
+            <TableColumn fx:id="viajeOrigen" prefWidth="92.0" text="Origen" />
+            <TableColumn fx:id="viajeDestino" prefWidth="92.80007934570312" text="Destino" />
+            <TableColumn fx:id="viajeFecha" prefWidth="68.800048828125" text="Fecha" />
+            <TableColumn fx:id="viajeEstatus" prefWidth="82.40008544921875" text="Estatus" />
+        </columns>
+      </TableView>
+      <TableView fx:id="tableViewCliente" layoutX="210.0" layoutY="160.0" prefHeight="250.0" prefWidth="186.0">
+        <columns>
+          <TableColumn fx:id="clientName" prefWidth="75.0" text="Cliente" />
+          <TableColumn fx:id="clientRating" prefWidth="110.0" text="Cliente Rating" />
+        </columns>
+      </TableView>
+      <TableView fx:id="tableViewTaxista" layoutX="396.0" layoutY="160.0" prefHeight="250.0" prefWidth="200.0">
+        <columns>
+          <TableColumn fx:id="taxistaName" prefWidth="90.0" text="Taxista" />
+          <TableColumn fx:id="taxistaRating" prefWidth="109.0" text="Taxista Rating" />
         </columns>
       </TableView>
    </children>

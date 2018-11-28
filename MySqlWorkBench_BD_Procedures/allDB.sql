@@ -961,12 +961,12 @@ DELIMITER ;
 DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `view_viajes`()
 BEGIN
-	SELECT ViajeCliente.Nombre as "Cliente", Taxista.Nombre as "Taxista", Origen, Destino, Fecha, ViajeCliente.Estatus, ViajeCliente.Rating as "Rating Cliente", Taxista.Rating as "Rating Taxista"
+  SELECT ViajeCliente.Nombre as "Cliente", Taxista.Nombre as "Taxista", Origen, Destino, Fecha, ViajeCliente.Estatus, ViajeCliente.Rating as "Rating Cliente", Taxista.Rating as "Rating Taxista", Distancia, Costo
     FROM (
-			SELECT Taxista_ID, Cliente.Nombre, Cliente.Rating, Origen, Destino, Fecha, Viaje.Estatus
+      SELECT Taxista_ID, Cliente.Nombre, Cliente.Rating, Origen, Destino, Fecha, Viaje.Estatus, Distancia, Costo
             FROM Viaje JOIN Cliente ON Viaje.Cliente_ID = Cliente.Cliente_ID
-		) as ViajeCliente
-	JOIN Taxista ON ViajeCliente.Taxista_ID = Taxista.Taxista_ID;
+    ) as ViajeCliente
+  JOIN Taxista ON ViajeCliente.Taxista_ID = Taxista.Taxista_ID;
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;

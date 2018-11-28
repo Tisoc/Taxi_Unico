@@ -10,41 +10,23 @@ package clases;
  * @author pablo
  */
 public class Viaje{
-	private int Taxista_ID;
-	private int Cliente_ID;
-	private int Tarifa_ID;
 	private String Origen;
 	private String Destino;
 	private String Estatus;
 	private double Distancia;
 	private double Costo;
 	private String FormaDePago;
-	private int EncuestaTaxista_ID;
-	private int EncuestaCliente_ID;
+        private String Fecha;
 
-	public int getTaxista_id(){
-		return Taxista_ID;
-	}
-
-	public void setTaxista_id(int Taxista_ID){
-		this.Taxista_ID=Taxista_ID;
-	}
-
-	public int getCliente_id(){
-		return Cliente_ID;
-	}
-
-	public void setCliente_id(int Cliente_ID){
-		this.Cliente_ID=Cliente_ID;
-	}
-
-	public int getTarifa_id(){
-		return Tarifa_ID;
-	}
-
-	public void setTarifa_id(int Tarifa_ID){
-		this.Tarifa_ID=Tarifa_ID;
-	}
+        //origen, destino, fecha, estatus, dDist, dCosto
+    public Viaje(String Origen, String Destino, String Fecha, String Estatus, double Distancia, double Costo) {
+        this.Origen = Origen;
+        this.Destino = Destino;
+        this.Fecha = Fecha;
+        this.Estatus = Estatus;
+        this.Distancia = Distancia;
+        this.Costo = Costo;
+    }
 
 	public String getOrigen(){
 		return Origen;
@@ -93,20 +75,12 @@ public class Viaje{
 	public void setFormadepago(String FormaDePago){
 		this.FormaDePago=FormaDePago;
 	}
+        
+        public String getFecha() {
+            return Fecha;
+        }
 
-	public int getEncuestataxista_id(){
-		return EncuestaTaxista_ID;
-	}
-
-	public void setEncuestataxista_id(int EncuestaTaxista_ID){
-		this.EncuestaTaxista_ID=EncuestaTaxista_ID;
-	}
-
-	public int getEncuestacliente_id(){
-		return EncuestaCliente_ID;
-	}
-
-	public void setEncuestacliente_id(int EncuestaCliente_ID){
-		this.EncuestaCliente_ID=EncuestaCliente_ID;
-	}
+        public void setFecha(String Fecha) {
+            this.Fecha = Fecha;
+        }
 }
