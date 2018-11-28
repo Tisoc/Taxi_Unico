@@ -31,7 +31,7 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <Button layoutX="143.0" layoutY="444.0" mnemonicParsing="false" onAction="#changeScreenButtonPushed" prefHeight="30.0" prefWidth="142.0" style="-fx-background-color: #40caee;" text="Menu Principal">
+      <Button layoutX="143.0" layoutY="444.0" mnemonicParsing="false" onAction="#volverDetalle" prefHeight="30.0" prefWidth="142.0" style="-fx-background-color: #40caee;" text="Menu Principal">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Button>

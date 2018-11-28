@@ -54,5 +54,17 @@ public class DetalleViajeController implements Initializable {
         window.setScene(tableViewScene);
         window.show();
     }
+              
+               
+    public void volverDetalle(ActionEvent event) throws IOException{
+        Parent tableViewParent = FXMLLoader.load(getClass().getResource("ProximoViaje.fxml"));
+        Scene tableViewScene = new Scene(tableViewParent);
+        
+        //This line gets the Stage information
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        
+        window.setScene(tableViewScene);
+        window.show();
+    }
     
 }

@@ -31,7 +31,7 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <Button layoutX="167.0" layoutY="486.0" mnemonicParsing="false" onAction="#changeScreenButtonPushed" prefHeight="30.0" prefWidth="142.0" style="-fx-background-color: #40caee;" text="Tu Viaje Actual">
+      <Button layoutX="167.0" layoutY="486.0" mnemonicParsing="false" onAction="#volverDetalle" prefHeight="30.0" prefWidth="142.0" style="-fx-background-color: #40caee;" text="Tu Viaje Actual">
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Button>

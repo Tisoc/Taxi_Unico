@@ -105,6 +105,7 @@ public class FXMLDocumentController implements Initializable {
             Logger.getLogger(FXMLDocumentController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+ 
     
       public void cambiarAltaClie(ActionEvent event) throws IOException
     {

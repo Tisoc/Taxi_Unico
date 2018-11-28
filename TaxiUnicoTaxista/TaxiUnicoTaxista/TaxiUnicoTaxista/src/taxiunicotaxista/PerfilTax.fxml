@@ -29,7 +29,7 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <Button layoutX="148.0" layoutY="419.0" mnemonicParsing="false" onAction="#changeScreenButtonPushed" prefHeight="30.0" prefWidth="142.0" style="-fx-background-color: #192a3d;" text="Viaje Actual" textFill="#f5f3f3">
+      <Button layoutX="148.0" layoutY="419.0" mnemonicParsing="false" onAction="#volverDetalle" prefHeight="30.0" prefWidth="142.0" style="-fx-background-color: #192a3d;" text="Viaje Actual" textFill="#f5f3f3">
          <font>
             <Font name="System Bold" size="13.0" />
          </font></Button>
