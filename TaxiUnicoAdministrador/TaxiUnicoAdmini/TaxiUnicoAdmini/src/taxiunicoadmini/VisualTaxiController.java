@@ -8,7 +8,14 @@ package taxiunicoadmini;
 import clases.Taxista;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.CallableStatement;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -22,6 +29,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import taxiunicoadmini.dbconnection.DBConnection;
 
 /**
  * FXML Controller class
@@ -29,6 +37,8 @@ import javafx.stage.Stage;
  * @author Alvaro Marquez
  */
 public class VisualTaxiController implements Initializable {
+    DBConnection connectionClass = new DBConnection();
+    Connection connection = connectionClass.getConnection();
     //columnas 
     @FXML
     private TableView<Taxista> tableView = new TableView<>();
@@ -47,27 +57,73 @@ public class VisualTaxiController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-        taxistaName.setCellValueFactory(new PropertyValueFactory<Taxista, String>("Nombre"));
-        taxistaEmail.setCellValueFactory(new PropertyValueFactory<Taxista, String>("Correo"));
-        taxistaTelephone.setCellValueFactory(new PropertyValueFactory<Taxista, String>("Telefono"));
-        taxistaUser.setCellValueFactory(new PropertyValueFactory<Taxista, String>("Usuario"));
-        taxistaStatus.setCellValueFactory(new PropertyValueFactory<Taxista, String>("Estatus"));
-        taxistaRating.setCellValueFactory(new PropertyValueFactory<Taxista, String>("Rating"));
-        tableView.setItems(getClientInfo());
+        try {
+            // TODO
+            taxistaName.setCellValueFactory(new PropertyValueFactory<Taxista, String>("Nombre"));
+            taxistaEmail.setCellValueFactory(new PropertyValueFactory<Taxista, String>("Correo"));
+            taxistaTelephone.setCellValueFactory(new PropertyValueFactory<Taxista, String>("Telefono"));
+            taxistaUser.setCellValueFactory(new PropertyValueFactory<Taxista, String>("Usuario"));
+            taxistaStatus.setCellValueFactory(new PropertyValueFactory<Taxista, String>("Estatus"));
+            taxistaRating.setCellValueFactory(new PropertyValueFactory<Taxista, String>("Rating"));
+            tableView.setItems(getClientInfo());
+        } catch (IOException ex) {
+            Logger.getLogger(VisualTaxiController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
-    public ObservableList<Taxista> getClientInfo() {
-
+    public ObservableList<Taxista> getClientInfo() throws IOException {
         ObservableList<Taxista> taxistas = FXCollections.observableArrayList();
-        taxistas.add(new Taxista("Juan Martinez","jm@gmail.com", "83656383", "JM98", true, 5));
-        taxistas.add(new Taxista("Pedro Páramo", "pp@gmail.com", "82636384", "Escri", true, 4));
-        taxistas.add(new Taxista("Lola Mtz", "lalola@gmail.com", "83636345", "Lola", false, 2.5));
-        taxistas.add(new Taxista("Bryan Reynolds", "bryan@gmail.com", "83632386", "BB", true, 3));
-        taxistas.add(new Taxista("Kim K ", "KK@gmail.com", "93632383","kk33", false, 2));
+        try {
+            //preparar para procedimiento almacenado
+            CallableStatement statement = connection.prepareCall("{call view_taxistas()}");
 
+            //llamar procedimiento almacenado
+            statement.execute();
+            ResultSet resultSet = statement.getResultSet();
+            ResultSetMetaData metaData = resultSet.getMetaData();
+            int numCols = metaData.getColumnCount(); //number of column
+            int numColUsuario, numColNombre, numColCorreo, numColTelefono, numColRating, numColEstatus;
+            numColUsuario=numColNombre=numColCorreo=numColTelefono=numColRating=numColEstatus=1;
+            for(int i = 1; i <= numCols; i++){
+                String colName = metaData.getColumnLabel(i);
+                switch (colName) {
+                    case "Usuario":
+                        numColUsuario = i;
+                        break;
+                    case "Nombre":
+                        numColNombre = i;
+                        break;
+                    case "Correo":
+                        numColCorreo = i;
+                        break;
+                    case "Telefono":
+                        numColTelefono = i;
+                        break;
+                    case "Estatus":
+                        numColEstatus = i;
+                        break;
+                    case "Rating":
+                        numColRating = i;
+                        break;
+                }
+            }
+            while (resultSet.next()) {
+                String usuario = resultSet.getString(numColUsuario);
+                String nombre = resultSet.getString(numColNombre);
+                String correo = resultSet.getString(numColCorreo);
+                String telefono = resultSet.getString(numColTelefono);
+                String rating = resultSet.getString(numColRating);
+                String estatus = resultSet.getString(numColEstatus);
+                boolean booleanEstatus = (Integer.parseInt(estatus) > 0);
+                double doubleRating = Double.parseDouble(rating);
+                taxistas.add(new Taxista(usuario, nombre, correo, telefono, booleanEstatus, doubleRating));
+            }
+            return taxistas;
+            //else muestra mensaje de error
+        } catch (SQLException ex) {
+            Logger.getLogger(FXMLDocumentController.class.getName()).log(Level.SEVERE, null, ex);
+        }
         return taxistas;
-
     }
       public void changeScreenButtonPushed(ActionEvent event) throws IOException
     {

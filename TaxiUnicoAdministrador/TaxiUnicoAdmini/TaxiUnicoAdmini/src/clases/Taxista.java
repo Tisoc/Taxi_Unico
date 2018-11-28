@@ -16,7 +16,7 @@ public class Taxista{
 	private String Correo;
 	private String Telefono;
         private boolean Estatus;
-
+ 
     public Taxista(String Usuario, String Nombre, String Correo, String Telefono, boolean Estatus, double Rating) {
         this.Usuario = Usuario;
         this.Nombre = Nombre;
