@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="674.0" prefWidth="476.0" style="-fx-background-color: #192a3d;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="taxiunicocliente.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="674.0" prefWidth="476.0" style="-fx-background-color: #192a3d;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="taxiunicocliente.HistorialClienteController">
     <children>
         <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
       <Text fill="#faf2f2" fontSmoothingType="LCD" layoutX="138.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Historial" textAlignment="CENTER" wrappingWidth="223.20000338554382">
