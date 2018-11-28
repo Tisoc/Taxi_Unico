@@ -81,6 +81,7 @@ public class VisualTaxiController implements Initializable {
             statement.execute();
             ResultSet resultSet = statement.getResultSet();
             ResultSetMetaData metaData = resultSet.getMetaData();
+            //obtener número de columna de cada atributo
             int numCols = metaData.getColumnCount(); //number of column
             int numColUsuario, numColNombre, numColCorreo, numColTelefono, numColRating, numColEstatus;
             numColUsuario=numColNombre=numColCorreo=numColTelefono=numColRating=numColEstatus=1;
@@ -107,6 +108,7 @@ public class VisualTaxiController implements Initializable {
                         break;
                 }
             }
+            //añadir taxistas a la lista a regresar
             while (resultSet.next()) {
                 String usuario = resultSet.getString(numColUsuario);
                 String nombre = resultSet.getString(numColNombre);

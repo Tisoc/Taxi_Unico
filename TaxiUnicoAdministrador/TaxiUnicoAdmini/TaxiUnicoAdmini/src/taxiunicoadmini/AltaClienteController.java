@@ -6,9 +6,17 @@
 package taxiunicoadmini;
 
 import clases.Cliente;
+import clases.Taxista;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.CallableStatement;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -22,6 +30,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import taxiunicoadmini.dbconnection.DBConnection;
 
 /**
  * FXML Controller class
@@ -29,6 +38,8 @@ import javafx.stage.Stage;
  * @author Alvaro Marquez
  */
 public class AltaClienteController implements Initializable {
+    DBConnection connectionClass = new DBConnection();
+    Connection connection = connectionClass.getConnection();
     //columnas 
     @FXML
     private TableView<Cliente> tableView = new TableView<>();
@@ -58,17 +69,61 @@ public class AltaClienteController implements Initializable {
     }
     
     public ObservableList<Cliente> getClientInfo() {
-
         ObservableList<Cliente> clientes = FXCollections.observableArrayList();
-        clientes.add(new Cliente("Jaime E. Garza","jaimegarza97@gmail.com", "83636383", "Jaime1997", true, 5));
-        clientes.add(new Cliente("Pablo Andrade", "pabloemilio97@gmail.com", "83636384", "PabloMan", true, 0));
-        clientes.add(new Cliente("Alvaro M.", "alvaro@gmail.com", "83636385", "Alvarol", true, 0));
-        clientes.add(new Cliente("Alex Lara", "alexanderlarius@gmail.com", "83636386", "AlexXxX", true, 0));
-        clientes.add(new Cliente("Pedro Pedrina", "P3P3@gmail.com", "83636383","PePe88", false, 0));
+        try {
+            //preparar para procedimiento almacenado
+            CallableStatement statement = connection.prepareCall("{call view_clientes()}");
 
+            //llamar procedimiento almacenado
+            statement.execute();
+            ResultSet resultSet = statement.getResultSet();
+            ResultSetMetaData metaData = resultSet.getMetaData();
+            //obtener número de columna de cada atributo
+            int numCols = metaData.getColumnCount(); //number of column
+            int numColUsuario, numColNombre, numColCorreo, numColTelefono, numColRating, numColEstatus;
+            numColUsuario = numColNombre = numColCorreo = numColTelefono = numColRating = numColEstatus = 1;
+            for (int i = 1; i <= numCols; i++) {
+                String colName = metaData.getColumnLabel(i);
+                switch (colName) {
+                    case "Usuario":
+                        numColUsuario = i;
+                        break;
+                    case "Nombre":
+                        numColNombre = i;
+                        break;
+                    case "Correo":
+                        numColCorreo = i;
+                        break;
+                    case "Telefono":
+                        numColTelefono = i;
+                        break;
+                    case "Estatus":
+                        numColEstatus = i;
+                        break;
+                    case "Rating":
+                        numColRating = i;
+                        break;
+                }
+            }
+            //añadir clientes a la lista a regresar
+            while (resultSet.next()) {
+                String usuario = resultSet.getString(numColUsuario);
+                String nombre = resultSet.getString(numColNombre);
+                String correo = resultSet.getString(numColCorreo);
+                String telefono = resultSet.getString(numColTelefono);
+                String rating = resultSet.getString(numColRating);
+                String estatus = resultSet.getString(numColEstatus);
+                boolean booleanEstatus = (Integer.parseInt(estatus) > 0);
+                double doubleRating = Double.parseDouble(rating);
+                clientes.add(new Cliente(nombre, correo, usuario, telefono, booleanEstatus, doubleRating));
+            }
+            //else muestra mensaje de error
+        } catch (SQLException ex) {
+            Logger.getLogger(FXMLDocumentController.class.getName()).log(Level.SEVERE, null, ex);
+        }
         return clientes;
-
     }
+
       public void changeScreenButtonPushed(ActionEvent event) throws IOException
     {
         Parent tableViewParent = FXMLLoader.load(getClass().getResource("visualClien.fxml"));
