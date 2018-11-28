@@ -36,6 +36,11 @@ public class Cliente{
         this.Estatus = status;
         this.Rating = rating;
     }
+    
+    public Cliente(String name, double rating) {
+        this.Nombre = new String(name);
+        this.Rating = rating;
+    }
 
 	public String getUsuario(){
 		return Usuario;

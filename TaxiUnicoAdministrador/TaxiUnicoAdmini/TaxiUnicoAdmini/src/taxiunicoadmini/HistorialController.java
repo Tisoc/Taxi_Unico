@@ -73,21 +73,20 @@ public class HistorialController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        /*
         clientName.setCellValueFactory(new PropertyValueFactory<Cliente, String>("Nombre"));
-        clientEmail.setCellValueFactory(new PropertyValueFactory<Cliente, String>("Correo"));
-        clientTelephone.setCellValueFactory(new PropertyValueFactory<Cliente, String>("Telefono"));
-        clientUser.setCellValueFactory(new PropertyValueFactory<Cliente, String>("Usuario"));
-        clientStatus.setCellValueFactory(new PropertyValueFactory<Cliente, String>("Estatus"));
         clientRating.setCellValueFactory(new PropertyValueFactory<Cliente, String>("Rating"));
-        tableViewCliente.setItems(getClientInfo());
-        */
+        tableViewCliente.setItems(getClienteInfo());
+        
+        taxistaName.setCellValueFactory(new PropertyValueFactory<Taxista, String>("Nombre"));
+        taxistaRating.setCellValueFactory(new PropertyValueFactory<Taxista, String>("Rating"));
+        tableViewTaxista.setItems(getTaxiInfo());
+        
         viajeOrigen.setCellValueFactory(new PropertyValueFactory<>("Origen"));
         viajeDestino.setCellValueFactory(new PropertyValueFactory<>("Destino"));
         viajeFecha.setCellValueFactory(new PropertyValueFactory<>("Fecha"));
         viajeDistancia.setCellValueFactory(new PropertyValueFactory<>("Distancia"));
         viajeCosto.setCellValueFactory(new PropertyValueFactory<>("Costo"));
-        getViajeInfo();
+        tableViewViaje.setItems(getViajeInfo());
     }
     
     public ObservableList<Viaje> getViajeInfo() {
@@ -137,7 +136,8 @@ public class HistorialController implements Initializable {
                 String costo = resultSet.getString(numColCosto);
                 double dDist = Double.parseDouble(distancia);
                 double dCosto = Double.parseDouble(costo);
-                viajes.add(new Viaje(origen, destino, fecha, estatus, dDist, dCosto));
+                Viaje v = new Viaje(origen, destino, fecha, estatus, dDist, dCosto);
+                viajes.add(v);
             }
             //else muestra mensaje de error
         } catch (SQLException ex) {
@@ -156,6 +156,84 @@ public class HistorialController implements Initializable {
         
         window.setScene(tableViewScene);
         window.show();
+    }
+      
+    public ObservableList<Cliente> getClienteInfo() {
+        ObservableList<Cliente> clientes = FXCollections.observableArrayList();
+        try {
+            //preparar para procedimiento almacenado
+            statement = connection.prepareCall("{call view_viajes()}");
+
+            //llamar procedimiento almacenado
+            statement.execute();
+            ResultSet resultSet = statement.getResultSet();
+            ResultSetMetaData metaData = resultSet.getMetaData();
+            //obtener número de columna de cada atributo
+            int numCols = metaData.getColumnCount(); //number of column
+            int numColNombre, numColRating;
+            numColNombre = numColRating = 1;
+            for (int i = 1; i <= numCols; i++) {
+                String colName = metaData.getColumnLabel(i);
+                switch (colName) {
+                    case "Cliente":
+                        numColNombre = i;
+                        break;
+                    case "Rating Cliente":
+                        numColRating = i;
+                        break;
+                }
+            }
+            //añadir clientes a la lista a regresar
+            while (resultSet.next()) {
+                String nombre = resultSet.getString(numColNombre);
+                String rating = resultSet.getString(numColRating);
+                double doubleRating = Double.parseDouble(rating);
+                clientes.add(new Cliente(nombre, doubleRating));
+            }
+            //else muestra mensaje de error
+        } catch (SQLException ex) {
+            Logger.getLogger(FXMLDocumentController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return clientes;
+    }
+    
+    public ObservableList<Taxista> getTaxiInfo() {
+        ObservableList<Taxista> taxistas = FXCollections.observableArrayList();
+        try {
+            //preparar para procedimiento almacenado
+            statement = connection.prepareCall("{call view_viajes()}");
+
+            //llamar procedimiento almacenado
+            statement.execute();
+            ResultSet resultSet = statement.getResultSet();
+            ResultSetMetaData metaData = resultSet.getMetaData();
+            //obtener número de columna de cada atributo
+            int numCols = metaData.getColumnCount(); //number of column
+            int numColNombre, numColRating;
+            numColNombre = numColRating = 1;
+            for (int i = 1; i <= numCols; i++) {
+                String colName = metaData.getColumnLabel(i);
+                switch (colName) {
+                    case "Taxista":
+                        numColNombre = i;
+                        break;
+                    case "Rating Taxista":
+                        numColRating = i;
+                        break;
+                }
+            }
+            //añadir clientes a la lista a regresar
+            while (resultSet.next()) {
+                String nombre = resultSet.getString(numColNombre);
+                String rating = resultSet.getString(numColRating);
+                double doubleRating = Double.parseDouble(rating);
+                taxistas.add(new Taxista(nombre, doubleRating));
+            }
+            //else muestra mensaje de error
+        } catch (SQLException ex) {
+            Logger.getLogger(FXMLDocumentController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return taxistas;
     }
     
       public void cambiarAltaClie(ActionEvent event) throws IOException

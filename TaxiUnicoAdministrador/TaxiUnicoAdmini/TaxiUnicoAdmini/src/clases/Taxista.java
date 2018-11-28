@@ -25,7 +25,12 @@ public class Taxista{
         this.Estatus = Estatus;
         this.Rating = Rating;
     }
-
+    
+    public Taxista(String name, double rating) {
+        this.Nombre = new String(name);
+        this.Rating = rating;
+    }
+    
     public boolean isEstatus() {
         return Estatus;
     }
