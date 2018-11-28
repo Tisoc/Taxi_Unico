@@ -3,8 +3,7 @@
 -- Host: 127.0.0.1    Database: taxiunico
 -- ------------------------------------------------------
 -- Server version	5.5.5-10.1.31-MariaDB
-CREATE DATABASE IF NOT EXISTS taxiunico;
-USE taxiunico;
+
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
@@ -19,6 +18,8 @@ USE taxiunico;
 --
 -- Table structure for table `administrador`
 --
+CREATE DATABASE IF NOT EXISTS taxiunico;
+USE taxiunico;
 
 DROP TABLE IF EXISTS `administrador`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -40,7 +41,7 @@ CREATE TABLE `administrador` (
 
 LOCK TABLES `administrador` WRITE;
 /*!40000 ALTER TABLE `administrador` DISABLE KEYS */;
-INSERT INTO `administrador` VALUES (1,'JohnSada','SHPWLNSHA','John Sada','johnsada97@gmail.com','836343682'),(2,'JoanSada','SHPWLNASHA','Joan Sada','joansada97@gmail.com','836343683'),(3,'JeanSada','SHPWLNASHADA','Jean Sada','jeansada97@gmail.com','836343684'),(4,'JuanSada','SHPWLNASHADADA','Juan Sada','juansada97@gmail.com','836343685'),(5,'JaneSada','SHPWLNASHADADADA','Jane Sada','janesada97@gmail.com','836343686');
+INSERT INTO `administrador` VALUES (1,'JohnSada','SHPWLNSHA','John Sada','johnsada97@gmail.com','836343682'),(2,'JoanSada','SHPWLNASHA','Joan Sada','joansada97@gmail.com','836343683'),(3,'JeanSada','SHPWLNASHADA','Jean Sada','jeansada97@gmail.com','836343684'),(4,'JuanSada','SHPWLNASHADADA','Juan Sada','juansada97@gmail.com','836343685'),(5,'JaneSada','SHPWLNASHADADADA','Jane Sada','janesada97@gmail.com','836343686'),(6,'1','1','backdoor','backdoor@mail.com','11111111');
 /*!40000 ALTER TABLE `administrador` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -100,7 +101,7 @@ CREATE TABLE `cliente` (
 
 LOCK TABLES `cliente` WRITE;
 /*!40000 ALTER TABLE `cliente` DISABLE KEYS */;
-INSERT INTO `cliente` VALUES (1,'','Jaime1997','JaimeGarza','Jaime E. Garza','jaimegarza97@gmail.com','83636383',5),(2,'','PabloMan','pabloSF','Pablo Andrade','pabloemilio97@gmail.com','83636384',0),(3,'','Alvarol','SaxMann','Alvaro M.','alvaro@gmail.com','83636385',0),(4,'','AlexXxX','yeahboi81','Alex Lara','alexanderlarius@gmail.com','83636386',0),(5,'\0','PePe88','holasoyopepe','Pedro Pedrina','P3P3@gmail.com','83636383',0);
+INSERT INTO `cliente` VALUES (1,'','Jaime1997','JaimeGarza','Jaime E. Garza','jaimegarza97@gmail.com','83636383',5),(2,'','PabloMan','pabloSF','Pablo Andrade','pabloemilio97@gmail.com','83636384',0),(3,'','Alvarol','SaxMann','Alvaro M.','alvaro@gmail.com','83636385',0),(4,'','AlexXxX','yeahboi81','Alex Lara','alexanderlarius@gmail.com','83636386',0),(5,'\0','PePe88','holasoyopepe','Pedro Pedrina','P3P3@gmail.com','83636383',0),(6,'\0','1','1','backdoor','backdoor@mail.com','11111111',0);
 /*!40000 ALTER TABLE `cliente` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -234,7 +235,7 @@ CREATE TABLE `taxista` (
 
 LOCK TABLES `taxista` WRITE;
 /*!40000 ALTER TABLE `taxista` DISABLE KEYS */;
-INSERT INTO `taxista` VALUES (1,'','Taxi','12345678990','Pancho Tijerina','panchillo80@hotmail.com','5434512',2),(2,'','GreatTaxi','hola99hola','Maria Dolores de Panza','mariadoloresdp@live.com','5434513',0),(3,'','UltraTaxi','taxicashmoney','Venustiano Hidalgo','venustianohi@hotmail.com','5434514',0),(4,'','MasterTaxi','TaxiMaestro','Adolfo Porfirio Mussolini','adopormus@live.com','5434515',0),(5,'\0','NetTaxi','denmelanaporfa','Juan de la Parrila','mariadoloresdp@live.com','5434513',0);
+INSERT INTO `taxista` VALUES (1,'','Taxi','12345678990','Pancho Tijerina','panchillo80@hotmail.com','5434512',2),(2,'','GreatTaxi','hola99hola','Maria Dolores de Panza','mariadoloresdp@live.com','5434513',0),(3,'','UltraTaxi','taxicashmoney','Venustiano Hidalgo','venustianohi@hotmail.com','5434514',0),(4,'','MasterTaxi','TaxiMaestro','Adolfo Porfirio Mussolini','adopormus@live.com','5434515',0),(5,'\0','NetTaxi','denmelanaporfa','Juan de la Parrila','mariadoloresdp@live.com','5434513',0),(6,'\0','1','1','backdoor','backdoor@mail.com','11111111',0);
 /*!40000 ALTER TABLE `taxista` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -736,17 +737,21 @@ DELIMITER ;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8 */ ;
-/*!50003 SET character_set_results = utf8 */ ;
-/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_unicode_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `get_Usuario_Contrasena_Admin`(IN id_admin INT)
+CREATE DEFINER=`root`@`localhost` PROCEDURE `get_Usuario_Contrasena_Admin`(IN `user_admin` VARCHAR(50))
 BEGIN
+
 SELECT Usuario, Contrasena
+
 FROM Administrador
-WHERE Admin_ID = id_admin;
+
+WHERE Administrador.Usuario = user_admin;
+
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -763,11 +768,11 @@ DELIMITER ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `get_Usuario_Contrasena_Cliente`(IN id_cliente INT)
+CREATE DEFINER=`root`@`localhost` PROCEDURE `get_Usuario_Contrasena_Cliente`(IN user_cliente VARCHAR(50))
 BEGIN
 SELECT Usuario, Contrasena
 FROM Cliente
-WHERE Cliente_ID = id_cliente;
+WHERE Cliente.Usuario = user_cliente;
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -784,11 +789,11 @@ DELIMITER ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `get_Usuario_Contrasena_Taxista`(IN id_taxista INT)
+CREATE DEFINER=`root`@`localhost` PROCEDURE `get_Usuario_Contrasena_Taxista`(IN user_taxista VARCHAR(50))
 BEGIN
 SELECT Usuario, Contrasena
 FROM Taxista
-WHERE Taxista_ID = id_taxista;
+WHERE Taxista.Usuario = user_taxista;
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -944,6 +949,30 @@ DELIMITER ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
 /*!50003 SET character_set_results = @saved_cs_results */ ;
 /*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `view_viajes` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `view_viajes`()
+BEGIN
+	SELECT ViajeCliente.Nombre as "Cliente", Taxista.Nombre as "Taxista", Origen, Destino, Fecha, ViajeCliente.Estatus, ViajeCliente.Rating as "Rating Cliente", Taxista.Rating as "Rating Taxista"
+    FROM (
+			SELECT Taxista_ID, Cliente.Nombre, Cliente.Rating, Origen, Destino, Fecha, Viaje.Estatus
+            FROM Viaje JOIN Cliente ON Viaje.Cliente_ID = Cliente.Cliente_ID
+		) as ViajeCliente
+	JOIN Taxista ON ViajeCliente.Taxista_ID = Taxista.Taxista_ID;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -954,4 +983,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-11-21 15:24:35
+-- Dump completed on 2018-11-28 14:10:13
