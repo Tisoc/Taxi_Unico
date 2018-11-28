@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="498.0" prefWidth="911.0" style="-fx-background-color: #40caee;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="taxiunicoadmini.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="498.0" prefWidth="911.0" style="-fx-background-color: #0E4D92;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="taxiunicoadmini.FXMLDocumentController">
     <children>
         <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
       <Text fill="#edebcf" layoutX="345.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Administración " underline="true" wrappingWidth="478.6125793457031">
@@ -32,11 +32,11 @@
             <Image url="@../img/logotrans.png" />
          </image>
       </ImageView>
-      <Text layoutX="689.0" layoutY="488.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Todos los Derechos Reservados 2018 " wrappingWidth="221.39227294921875">
+      <Text fill="WHITE" layoutX="689.0" layoutY="488.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Todos los Derechos Reservados 2018 " wrappingWidth="221.39227294921875">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Text>
-      <Hyperlink layoutX="367.0" layoutY="447.0" onAction="#recuperarContra" text="Olvidaste Tu Contraseña?" textFill="#110f0f" underline="true" />
+      <Hyperlink layoutX="367.0" layoutY="447.0" onAction="#recuperarContra" text="Olvidaste Tu Contraseña?" textFill="WHITE" underline="true" />
     </children>
 </AnchorPane>

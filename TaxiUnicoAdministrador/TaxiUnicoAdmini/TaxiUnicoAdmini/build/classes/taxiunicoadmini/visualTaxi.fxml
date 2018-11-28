@@ -75,17 +75,21 @@
             <Image url="@../img/logotaxi.png" />
          </image>
       </ImageView>
-      <TableView fx:id="tableView" layoutX="212.0" layoutY="143.0" prefHeight="200.0" prefWidth="682.0">
+      <TableView fx:id="tableViewTaxista" layoutX="212.0" layoutY="143.0" prefHeight="200.0" prefWidth="390.0">
         <columns>
           <TableColumn fx:id="taxistaName" prefWidth="75.0" text="Nombre" />
             <TableColumn fx:id="taxistaEmail" prefWidth="75.0" text="Correo" />
             <TableColumn fx:id="taxistaTelephone" prefWidth="75.0" text="Telefono" />
-            <TableColumn prefWidth="75.0" text="Marca" />
-            <TableColumn prefWidth="77.60001220703123" text="Modelo" />
-            <TableColumn prefWidth="75.0" text="Placas" />
-            <TableColumn prefWidth="75.0" text="Color" />
             <TableColumn fx:id="taxistaRating" prefWidth="75.0" text="Rating" />
-            <TableColumn fx:id="taxistaStatus" prefWidth="75.0" text="Estatus" />
+            <TableColumn fx:id="taxistaStatus" prefWidth="89.0" text="Estatus" />
+        </columns>
+      </TableView>
+      <TableView fx:id="tableViewCarro" layoutX="602.0" layoutY="143.0" prefHeight="200.0" prefWidth="305.0">
+        <columns>
+          <TableColumn fx:id="carroPlaca" prefWidth="75.0" text="Placas" />
+          <TableColumn fx:id="carroMarca" prefWidth="75.0" text="Marca" />
+            <TableColumn fx:id="carroModelo" prefWidth="75.0" text="Modelo" />
+            <TableColumn fx:id="carroColor" prefWidth="75.0" text="Color" />
         </columns>
       </TableView>
    </children>

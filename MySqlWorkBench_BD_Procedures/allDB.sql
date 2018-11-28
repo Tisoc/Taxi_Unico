@@ -937,7 +937,7 @@ DELIMITER ;
 DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `view_taxistas`()
 BEGIN
-SELECT * FROM Taxista;
+SELECT * FROM Taxista JOIN Carro ON Taxista.Taxista_ID = Carro.Taxista_ID;
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;

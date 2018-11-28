@@ -9,21 +9,19 @@ package clases;
  *
  * @author pablo
  */
-class Carro{
-	private int Taxista_ID;
+public class Carro{
         private String Placa;
 	private String Marca;
 	private String Modelo;
 	private int Año;
 	private String Color;
 
-	public int getTaxista_id(){
-		return Taxista_ID;
-	}
-
-	public void setTaxista_id(int Taxista_ID){
-		this.Taxista_ID=Taxista_ID;
-	}
+    public Carro(String Placa, String Marca, String Modelo, String Color) {
+        this.Placa = Placa;
+        this.Marca = Marca;
+        this.Modelo = Modelo;
+        this.Color = Color;
+    }
 
 	public String getMarca(){
 		return Marca;

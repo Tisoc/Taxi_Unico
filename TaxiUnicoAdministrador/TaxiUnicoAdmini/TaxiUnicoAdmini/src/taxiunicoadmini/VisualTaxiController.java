@@ -6,6 +6,7 @@
 package taxiunicoadmini;
 
 import clases.Taxista;
+import clases.Carro;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.CallableStatement;
@@ -39,9 +40,12 @@ import taxiunicoadmini.dbconnection.DBConnection;
 public class VisualTaxiController implements Initializable {
     DBConnection connectionClass = new DBConnection();
     Connection connection = connectionClass.getConnection();
+    CallableStatement statement;
     //columnas 
     @FXML
-    private TableView<Taxista> tableView = new TableView<>();
+    private TableView<Taxista> tableViewTaxista =  new TableView<>();
+    @FXML
+    private TableView<Carro> tableViewCarro = new TableView<>();
     @FXML
     private TableColumn<Taxista, String> taxistaName = new TableColumn<>();
     @FXML
@@ -54,6 +58,14 @@ public class VisualTaxiController implements Initializable {
     private TableColumn<Taxista, String> taxistaStatus = new TableColumn<>();
     @FXML
     private TableColumn<Taxista, String> taxistaRating = new TableColumn<>();
+    @FXML
+    private TableColumn<Carro, String> carroModelo = new TableColumn<>();
+    @FXML
+    private TableColumn<Carro, String> carroPlaca = new TableColumn<>();
+    @FXML
+    private TableColumn<Carro, String> carroColor = new TableColumn<>();
+    @FXML
+    private TableColumn<Carro, String> carroMarca = new TableColumn<>();
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -65,17 +77,25 @@ public class VisualTaxiController implements Initializable {
             taxistaUser.setCellValueFactory(new PropertyValueFactory<Taxista, String>("Usuario"));
             taxistaStatus.setCellValueFactory(new PropertyValueFactory<Taxista, String>("Estatus"));
             taxistaRating.setCellValueFactory(new PropertyValueFactory<Taxista, String>("Rating"));
-            tableView.setItems(getClientInfo());
+            tableViewTaxista.setItems(getTaxiInfo());
+            
+            carroPlaca.setCellValueFactory(new PropertyValueFactory<>("Placa"));
+            carroMarca.setCellValueFactory(new PropertyValueFactory<>("Marca"));
+            carroModelo.setCellValueFactory(new PropertyValueFactory<>("Modelo"));
+            carroColor.setCellValueFactory(new PropertyValueFactory<>("Color"));
+            tableViewCarro.setItems(getCarroInfo());
+            
+            //tableView.setItems(getCarroInfo());
         } catch (IOException ex) {
             Logger.getLogger(VisualTaxiController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
-    public ObservableList<Taxista> getClientInfo() throws IOException {
+    public ObservableList<Taxista> getTaxiInfo() throws IOException {
         ObservableList<Taxista> taxistas = FXCollections.observableArrayList();
         try {
             //preparar para procedimiento almacenado
-            CallableStatement statement = connection.prepareCall("{call view_taxistas()}");
+            statement = connection.prepareCall("{call view_taxistas()}");
 
             //llamar procedimiento almacenado
             statement.execute();
@@ -84,8 +104,8 @@ public class VisualTaxiController implements Initializable {
             //obtener número de columna de cada atributo
             int numCols = metaData.getColumnCount(); //number of column
             int numColUsuario, numColNombre, numColCorreo, numColTelefono, numColRating, numColEstatus;
-            numColUsuario=numColNombre=numColCorreo=numColTelefono=numColRating=numColEstatus=1;
-            for(int i = 1; i <= numCols; i++){
+            numColUsuario = numColNombre = numColCorreo = numColTelefono = numColRating = numColEstatus = 1;
+            for (int i = 1; i <= numCols; i++) {
                 String colName = metaData.getColumnLabel(i);
                 switch (colName) {
                     case "Usuario":
@@ -126,6 +146,50 @@ public class VisualTaxiController implements Initializable {
             Logger.getLogger(FXMLDocumentController.class.getName()).log(Level.SEVERE, null, ex);
         }
         return taxistas;
+    }
+    
+    public ObservableList<Carro> getCarroInfo() throws IOException {
+        ObservableList<Carro> carros = FXCollections.observableArrayList();
+        try {
+            //get result set
+            statement.execute();
+            ResultSet resultSet = statement.getResultSet();
+            ResultSetMetaData metaData = resultSet.getMetaData();
+            //obtener número de columna de cada atributo
+            int numCols = metaData.getColumnCount(); //number of column
+            int numColPlaca, numColMarca, numColModelo, numColColor;
+            numColPlaca=numColMarca=numColModelo=numColColor=1;
+            for(int i = 1; i <= numCols; i++){
+                String colName = metaData.getColumnLabel(i);
+                switch (colName) {
+                    case "Placa":
+                        numColPlaca = i;
+                        break;
+                    case "Marca":
+                        numColMarca = i;
+                        break;
+                    case "Modelo":
+                        numColModelo = i;
+                        break;
+                    case "Color":
+                        numColColor = i;
+                        break;
+                }
+            }
+            //añadir carros a la lista a regresar
+            while (resultSet.next()) {
+                String placa = resultSet.getString(numColPlaca);
+                String marca = resultSet.getString(numColMarca);
+                String modelo = resultSet.getString(numColModelo);
+                String color = resultSet.getString(numColColor);
+                carros.add(new Carro(placa, marca, modelo, color));
+            }
+            return carros;
+            //else muestra mensaje de error
+        } catch (SQLException ex) {
+            Logger.getLogger(FXMLDocumentController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return carros;
     }
       public void changeScreenButtonPushed(ActionEvent event) throws IOException
     {
