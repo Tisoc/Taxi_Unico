@@ -22,7 +22,7 @@
             <Font name="System Bold" size="30.0" />
          </font>
       </Text>
-      <Button layoutX="548.0" layoutY="368.0" mnemonicParsing="false" onAction="#cambiarAltTaxi" prefHeight="40.0" prefWidth="193.0" style="-fx-background-color: #669999;" text="Agregar Nuevo Taxista" textFill="#faf2f2">
+      <Button layoutX="548.0" layoutY="399.0" mnemonicParsing="false" onAction="#cambiarAltTaxi" prefHeight="40.0" prefWidth="193.0" style="-fx-background-color: #669999;" text="Agregar Nuevo Taxista" textFill="#faf2f2">
          <font>
             <Font name="Agency FB" size="20.0" />
          </font></Button>
@@ -73,7 +73,7 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Button>
-      <TableView fx:id="tableViewTaxista" layoutX="210.0" layoutY="143.0" prefHeight="200.0" prefWidth="458.0">
+      <TableView fx:id="tableViewTaxista" layoutX="210.0" layoutY="143.0" prefHeight="238.0" prefWidth="458.0">
         <columns>
           <TableColumn fx:id="taxistaName" prefWidth="129.60003662109375" text="Nombre" />
             <TableColumn fx:id="taxistaEmail" prefWidth="123.19998168945312" text="Correo" />
@@ -82,10 +82,10 @@
             <TableColumn fx:id="taxistaStatus" prefWidth="54.4000244140625" text="Estatus" />
         </columns>
       </TableView>
-      <TableView fx:id="tableViewCarro" layoutX="664.0" layoutY="143.0" prefHeight="200.0" prefWidth="391.0">
+      <TableView fx:id="tableViewCarro" layoutX="664.0" layoutY="143.0" prefHeight="238.0" prefWidth="391.0">
         <columns>
-          <TableColumn fx:id="carroPlaca" prefWidth="115.20001220703125" text="Placas" />
-          <TableColumn fx:id="carroMarca" prefWidth="80.800048828125" text="Marca" />
+          <TableColumn fx:id="carroPlaca" prefWidth="104.79998779296875" text="Placas" />
+          <TableColumn fx:id="carroMarca" prefWidth="92.79998779296875" text="Marca" />
             <TableColumn fx:id="carroModelo" prefWidth="94.4000244140625" text="Modelo" />
             <TableColumn fx:id="carroColor" maxWidth="144.800048828125" prefWidth="100.7999267578125" text="Color" />
         </columns>

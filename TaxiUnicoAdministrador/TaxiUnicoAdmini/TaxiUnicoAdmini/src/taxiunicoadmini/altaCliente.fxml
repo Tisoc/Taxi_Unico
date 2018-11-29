@@ -21,7 +21,7 @@
             <Font name="System Bold" size="31.0" />
          </font>
       </Text>
-      <Button layoutX="525.0" layoutY="361.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="191.0" style="-fx-background-color: #669999;" text="Registrar" textFill="#faf4f4">
+      <Button layoutX="525.0" layoutY="361.0" mnemonicParsing="false" onAction="#darDeAltaCliente" prefHeight="54.0" prefWidth="191.0" style="-fx-background-color: #669999;" text="Registrar" textFill="#faf4f4">
          <font>
             <Font name="Agency FB Bold" size="28.0" />
          </font></Button>

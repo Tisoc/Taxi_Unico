@@ -75,26 +75,26 @@
             <Image url="@../img/logotaxi.png" />
          </image>
       </ImageView>
-      <TableView fx:id="tableViewViaje" layoutX="522.0" layoutY="160.0" prefHeight="250.0" prefWidth="375.0">
+      <TableView fx:id="tableViewViaje" layoutX="536.0" layoutY="160.0" prefHeight="250.0" prefWidth="538.0">
         <columns>
-            <TableColumn fx:id="viajeOrigen" prefWidth="67.0" text="Origen" />
-            <TableColumn fx:id="viajeDestino" prefWidth="58.0" text="Destino" />
-            <TableColumn fx:id="viajeFecha" prefWidth="70.0" text="Fecha" />
-            <TableColumn fx:id="viajeEstatus" prefWidth="50.0" text="Estatus" />
-            <TableColumn fx:id="viajeDistancia" prefWidth="73.0" text="Distancia" />
-            <TableColumn fx:id="viajeCosto" prefWidth="57.0" text="Costo" />
+            <TableColumn fx:id="viajeOrigen" prefWidth="116.79998779296875" text="Origen" />
+            <TableColumn fx:id="viajeDestino" prefWidth="83.20001220703125" text="Destino" />
+            <TableColumn fx:id="viajeFecha" prefWidth="91.20001220703125" text="Fecha" />
+            <TableColumn fx:id="viajeEstatus" prefWidth="75.20001220703125" text="Estatus" />
+            <TableColumn fx:id="viajeDistancia" prefWidth="90.4000244140625" text="Distancia" />
+            <TableColumn fx:id="viajeCosto" prefWidth="89.5999755859375" text="Costo" />
         </columns>
       </TableView>
       <TableView fx:id="tableViewCliente" layoutX="210.0" layoutY="160.0" prefHeight="250.0" prefWidth="169.0">
         <columns>
-          <TableColumn fx:id="clientName" prefWidth="79.0" text="Cliente" />
-          <TableColumn fx:id="clientRating" prefWidth="89.0" text="Cliente Rating" />
+          <TableColumn fx:id="clientName" prefWidth="82.4000244140625" text="Cliente" />
+          <TableColumn fx:id="clientRating" prefWidth="86.39999389648438" text="Cliente Rating" />
         </columns>
       </TableView>
-      <TableView fx:id="tableViewTaxista" layoutX="376.0" layoutY="160.0" prefHeight="250.0" prefWidth="146.0">
+      <TableView fx:id="tableViewTaxista" layoutX="376.0" layoutY="160.0" prefHeight="250.0" prefWidth="161.0">
         <columns>
-          <TableColumn fx:id="taxistaName" prefWidth="56.0" text="Taxista" />
-          <TableColumn fx:id="taxistaRating" prefWidth="90.0" text="Taxista Rating" />
+          <TableColumn fx:id="taxistaName" prefWidth="74.39996337890625" text="Taxista" />
+          <TableColumn fx:id="taxistaRating" prefWidth="86.40005493164062" text="Taxista Rating" />
 
         </columns>
       </TableView>
