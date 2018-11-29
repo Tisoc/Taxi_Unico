@@ -5,11 +5,13 @@
  */
 package taxiunicocliente;
 
+import clases.Cliente;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -67,6 +69,16 @@ public class FXMLDocumentController implements Initializable {
                 System.out.println("pass:" + pass + "  " + "valid_pass:" + valid_pass);
                 if (valid_pass.equals(pass)) {
                     System.out.println("im in");
+                    statement = connection.prepareCall("{call getClienteID(?)}");
+                    statement.setString(1, user);
+                    statement.execute();
+                    ResultSet resultSetClienteID = statement.getResultSet();
+                    if (resultSetClienteID.next()) {
+                        int id_currCliente = resultSetClienteID.getInt(1);
+                        Cliente c = new Cliente();
+                        c.setId_currCliente(id_currCliente);
+                    }
+                    
                     Parent tableViewParent = FXMLLoader.load(getClass().getResource("ProximoViaje.fxml"));
                     Scene tableViewScene = new Scene(tableViewParent);
 

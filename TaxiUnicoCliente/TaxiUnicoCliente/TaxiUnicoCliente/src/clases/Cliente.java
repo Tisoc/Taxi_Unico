@@ -12,13 +12,25 @@ import java.time.LocalDate;
  * @author pablo
  */
 public class Cliente{
+        private static int id_currCliente;
+        
 	private String Usuario;
 	private String Contrasena;
         private String Nombre;
 	private String Correo;
 	private String Telefono;
         private boolean Estatus;
+    
+    public Cliente() {
+    }
+        
+    public static int getId_currCliente() {
+        return id_currCliente;
+    }
 
+    public static void setId_currCliente(int id_currCliente) {
+        Cliente.id_currCliente = id_currCliente;
+    }
     public boolean isEstatus() {
         return Estatus;
     }
@@ -27,7 +39,7 @@ public class Cliente{
         this.Estatus = Estatus;
     }
 	private double Rating;
-    
+
     public Cliente(String name, String email, String telephone, String user, boolean status, double rating) {
         this.Nombre = new String(name);
         this.Correo = email;

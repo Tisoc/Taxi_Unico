@@ -5,20 +5,32 @@
  */
 package clases;
 
-import java.time.LocalDate;
-
 /**
  *
  * @author pablo
  */
-public class Cliente{
+public class Taxista{
 	private String Usuario;
 	private String Contrasena;
-        private String Nombre;
+	private String Nombre;
 	private String Correo;
 	private String Telefono;
         private boolean Estatus;
-
+ 
+    public Taxista(String Usuario, String Nombre, String Correo, String Telefono, boolean Estatus, double Rating) {
+        this.Usuario = Usuario;
+        this.Nombre = Nombre;
+        this.Correo = Correo;
+        this.Telefono = Telefono;
+        this.Estatus = Estatus;
+        this.Rating = Rating;
+    }
+    
+    public Taxista(String name, double rating) {
+        this.Nombre = new String(name);
+        this.Rating = rating;
+    }
+    
     public boolean isEstatus() {
         return Estatus;
     }
@@ -27,20 +39,6 @@ public class Cliente{
         this.Estatus = Estatus;
     }
 	private double Rating;
-    
-    public Cliente(String name, String email, String telephone, String user, boolean status, double rating) {
-        this.Nombre = new String(name);
-        this.Correo = email;
-        this.Telefono = telephone;
-        this.Usuario = user;
-        this.Estatus = status;
-        this.Rating = rating;
-    }
-    
-    public Cliente(String name, double rating) {
-        this.Nombre = new String(name);
-        this.Rating = rating;
-    }
 
 	public String getUsuario(){
 		return Usuario;

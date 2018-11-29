@@ -18,6 +18,8 @@
 --
 -- Table structure for table `administrador`
 --
+CREATE DATABASE IF NOT EXISTS taxiunico;
+USE taxiunico;
 
 DROP TABLE IF EXISTS `administrador`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -174,7 +176,7 @@ CREATE TABLE `tarifa` (
 
 LOCK TABLES `tarifa` WRITE;
 /*!40000 ALTER TABLE `tarifa` DISABLE KEYS */;
-INSERT INTO `tarifa` VALUES (1,1.1,20.2),(2,1.5,25),(3,0.8,21),(4,2,30),(5,1.7,28);
+INSERT INTO `tarifa` VALUES (1,3.5,300),(2,1.5,25),(3,0.8,21),(4,2,30),(5,1.7,28);
 /*!40000 ALTER TABLE `tarifa` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -312,6 +314,48 @@ DELIMITER ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
 /*!50003 SET character_set_results = @saved_cs_results */ ;
 /*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `actualizar_costoPorKm` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `actualizar_costoPorKm`(IN nuevoCosto FLOAT)
+BEGIN
+UPDATE Tarifa
+SET CostoPorKm = nuevoCosto
+WHERE (Tarifa_ID = 1);
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `actualizar_multiplicador` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `actualizar_multiplicador`(IN nuevoMultiplicador FLOAT)
+BEGIN
+UPDATE Tarifa
+SET Multiplicador = nuevoMultiplicador
+WHERE (Tarifa_ID = 1);
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 /*!50003 DROP PROCEDURE IF EXISTS `actualizar_perfil_cliente` */;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
@@ -402,27 +446,6 @@ BEGIN
     WHERE Taxista.Taxista_ID = id_taxista;
     
     SELECT Rating FROM Taxista WHERE Taxista_ID = id_taxista;
-END ;;
-DELIMITER ;
-/*!50003 SET sql_mode              = @saved_sql_mode */ ;
-/*!50003 SET character_set_client  = @saved_cs_client */ ;
-/*!50003 SET character_set_results = @saved_cs_results */ ;
-/*!50003 SET collation_connection  = @saved_col_connection */ ;
-/*!50003 DROP PROCEDURE IF EXISTS `actualizar_tarifa` */;
-/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
-/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
-/*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8 */ ;
-/*!50003 SET character_set_results = utf8 */ ;
-/*!50003 SET collation_connection  = utf8_general_ci */ ;
-/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `actualizar_tarifa`()
-BEGIN
-UPDATE Tarifa
-SET Multiplicador = nuevo_multiplicador, CostoPorKm = nuevo_costo
-WHERE (Tarifa_ID = id_tarifa);
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -858,8 +881,6 @@ DELIMITER ;
 /*!50003 SET collation_connection  = utf8_general_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
-CREATE DATABASE IF NOT EXISTS taxiunico;
-USE taxiunico;
 DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `get_viajes_encuestas_cliente`(IN id_cliente INT)
 BEGIN
@@ -988,4 +1009,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-11-28 20:36:47
+-- Dump completed on 2018-11-28 21:20:06
