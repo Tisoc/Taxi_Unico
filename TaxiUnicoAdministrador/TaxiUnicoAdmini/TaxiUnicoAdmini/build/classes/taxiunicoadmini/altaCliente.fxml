@@ -56,12 +56,12 @@
             <Font name="Agency FB Bold" size="30.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="611.0" layoutY="268.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Usuario:" wrappingWidth="84.68073272705078">
+      <Text fill="WHITE" layoutX="650.0" layoutY="268.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Usuario:" wrappingWidth="84.68073272705078">
          <font>
             <Font name="Agency FB Bold" size="29.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="615.0" layoutY="322.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contraseña:" wrappingWidth="141.48072052001953">
+      <Text fill="WHITE" layoutX="630.0" layoutY="322.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contraseña:" wrappingWidth="141.48072052001953">
          <font>
             <Font name="Agency FB Bold" size="29.0" />
          </font>

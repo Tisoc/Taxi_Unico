@@ -10,17 +10,22 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="645.0" prefWidth="441.0" style="-fx-background-color: #0099cc;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="taxiunicotaxista.EncuestaTaxController">
+<AnchorPane id="AnchorPane" prefHeight="805.0" prefWidth="554.0" style="-fx-background-color: #0099cc;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="taxiunicotaxista.EncuestaTaxController">
     <children>
+      <ImageView fitHeight="752.0" fitWidth="554.0" layoutY="54.0" pickOnBounds="true">
+         <image>
+            <Image url="@../img/cellback1.jpg" />
+         </image>
+      </ImageView>
         <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
-      <Text fill="#f2ecec" fontSmoothingType="LCD" layoutX="75.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ENCUESTA" textAlignment="CENTER" wrappingWidth="289.6000277996063">
+      <Text fill="#f2ecec" fontSmoothingType="LCD" layoutX="119.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ENCUESTA" textAlignment="CENTER" wrappingWidth="343.9999911785126">
          <font>
-            <Font name="Book Antiqua" size="41.0" />
+            <Font name="Agency FB Bold" size="55.0" />
          </font>
       </Text>
-      <AnchorPane layoutY="-1.0" prefHeight="54.0" prefWidth="441.0" style="-fx-background-color: black;">
+      <AnchorPane layoutY="-1.0" prefHeight="54.0" prefWidth="554.0" style="-fx-background-color: black;">
          <children>
-            <Button layoutX="340.0" layoutY="13.0" mnemonicParsing="false" onAction="#salirApp" prefHeight="30.0" prefWidth="92.0" style="-fx-background-color: #192a3d;" text="Salir" textFill="#faf5f5">
+            <Button layoutX="434.0" layoutY="11.0" mnemonicParsing="false" onAction="#salirApp" prefHeight="30.0" prefWidth="92.0" style="-fx-background-color: #192a3d;" text="Salir" textFill="#faf5f5">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font></Button>
@@ -31,38 +36,33 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <Button layoutX="143.0" layoutY="473.0" mnemonicParsing="false" onAction="#volverDetalle" prefHeight="30.0" prefWidth="142.0" style="-fx-background-color: #192a3d;" text="Menu Principal" textFill="#faf7f7">
+      <Button layoutX="187.0" layoutY="604.0" mnemonicParsing="false" onAction="#salirApp" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: #192a3d;" text="Salir" textFill="#f2ecec">
          <font>
-            <Font name="System Bold" size="12.0" />
+            <Font name="System Bold" size="16.0" />
          </font></Button>
-      <Button layoutX="143.0" layoutY="518.0" mnemonicParsing="false" onAction="#cambiarPerfil" prefHeight="30.0" prefWidth="142.0" style="-fx-background-color: #192a3d;" text="Configurar Perfil" textFill="#f2ecec">
-         <font>
-            <Font name="System Bold" size="13.0" />
-         </font></Button>
-      <AnchorPane layoutX="15.0" layoutY="139.0" opacity="0.2" prefHeight="278.0" prefWidth="411.0" style="-fx-background-color: black;" />
-      <Text fill="#fdfdfd" layoutX="165.0" layoutY="562.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Algun Problema?" wrappingWidth="128.1624755859375" />
-      <Text fill="#faf5f5" layoutX="136.0" layoutY="585.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contacta a un Administrador!" underline="true" wrappingWidth="206.1367068886757" />
-      <ImageView fitHeight="39.0" fitWidth="221.0" layoutX="110.0" layoutY="603.0" pickOnBounds="true" preserveRatio="true">
+      <Text fill="#fdfdfd" layoutX="227.0" layoutY="709.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Algun Problema?" wrappingWidth="128.1624755859375" />
+      <Text fill="#faf5f5" layoutX="196.0" layoutY="737.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contacta a un Administrador!" underline="true" wrappingWidth="206.1367068886757" />
+      <ImageView fitHeight="39.0" fitWidth="221.0" layoutX="168.0" layoutY="756.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../img/logotrans.png" />
          </image>
       </ImageView>
-      <Text fill="#faf8f8" layoutX="43.0" layoutY="185.0" strokeType="OUTSIDE" strokeWidth="0.0" text="¿Del 1 al 5 como Calificas a tu Pasajero?">
+      <Text fill="#faf8f8" layoutX="107.0" layoutY="212.0" strokeType="OUTSIDE" strokeWidth="0.0" text="¿Del 1 al 5 como Calificas a tu Pasajero?">
          <font>
             <Font size="21.0" />
          </font>
       </Text>
-      <Text fill="#faf8f8" layoutX="133.0" layoutY="286.0" strokeType="OUTSIDE" strokeWidth="0.0" text="¿Comentarios?">
+      <Text fill="#faf8f8" layoutX="209.0" layoutY="294.0" strokeType="OUTSIDE" strokeWidth="0.0" text="¿Comentarios?">
          <font>
             <Font size="21.0" />
          </font>
       </Text>
-      <TextField layoutX="114.0" layoutY="206.0" prefHeight="26.0" prefWidth="199.0" />
-      <TextArea layoutX="50.0" layoutY="294.0" prefHeight="104.0" prefWidth="339.0" />
-      <Button layoutX="142.0" layoutY="429.0" mnemonicParsing="false" onAction="#changeScreenButtonPushed" prefHeight="30.0" prefWidth="142.0" style="-fx-background-color: #192a3d;" text="Enviar" textFill="#faf7f7">
+      <TextField layoutX="182.0" layoutY="235.0" prefHeight="26.0" prefWidth="199.0" />
+      <Button layoutX="187.0" layoutY="530.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: #192a3d;" text="Enviar" textFill="#faf7f7">
          <font>
-            <Font name="System Bold" size="12.0" />
+            <Font name="System Bold" size="18.0" />
          </font>
       </Button>
+      <TextArea layoutX="21.0" layoutY="310.0" prefHeight="186.0" prefWidth="514.0" />
     </children>
 </AnchorPane>

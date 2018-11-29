@@ -10,17 +10,22 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="674.0" prefWidth="476.0" style="-fx-background-color: #0099cc;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="taxiunicotaxista.HistorialdeViajesController">
+<AnchorPane id="AnchorPane" prefHeight="772.0" prefWidth="576.0" style="-fx-background-color: #0099cc;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="taxiunicotaxista.HistorialdeViajesController">
     <children>
+      <ImageView fitHeight="718.0" fitWidth="576.0" layoutY="54.0" nodeOrientation="INHERIT" pickOnBounds="true">
+         <image>
+            <Image url="@../img/cellback1.jpg" />
+         </image>
+      </ImageView>
         <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
-      <Text fill="#faf2f2" fontSmoothingType="LCD" layoutX="138.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Historial" textAlignment="CENTER" wrappingWidth="223.20000338554382">
+      <Text fill="#faf2f2" fontSmoothingType="LCD" layoutX="186.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Historial" textAlignment="CENTER" wrappingWidth="223.20000338554382">
          <font>
-            <Font name="Book Antiqua" size="41.0" />
+            <Font name="Agency FB Bold" size="48.0" />
          </font>
       </Text>
-      <AnchorPane prefHeight="54.0" prefWidth="476.0" style="-fx-background-color: black;">
+      <AnchorPane prefHeight="54.0" prefWidth="576.0" style="-fx-background-color: black;">
          <children>
-            <Button layoutX="364.0" layoutY="13.0" mnemonicParsing="false" onAction="#salirApp" prefHeight="26.0" prefWidth="90.0" style="-fx-background-color: #192a3d;" text="Salir" textFill="#f8efef">
+            <Button layoutX="462.0" layoutY="12.0" mnemonicParsing="false" onAction="#salirApp" prefHeight="26.0" prefWidth="90.0" style="-fx-background-color: #192a3d;" text="Salir" textFill="#f8efef">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font></Button>
@@ -31,36 +36,33 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <Button layoutX="167.0" layoutY="486.0" mnemonicParsing="false" onAction="#volverDetalle" prefHeight="30.0" prefWidth="142.0" style="-fx-background-color: #192a3d;" text="Tu Viaje Actual" textFill="#faf9f9">
+      <Button layoutX="216.0" layoutY="543.0" mnemonicParsing="false" onAction="#volverDetalle" prefHeight="38.0" prefWidth="160.0" style="-fx-background-color: #192a3d;" text="Tu Viaje Actual" textFill="#faf9f9">
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Button>
-      <Button layoutX="167.0" layoutY="536.0" mnemonicParsing="false" onAction="#cambiarPerfil" prefHeight="30.0" prefWidth="142.0" style="-fx-background-color: #192a3d;" text="Configurar Perfil" textFill="#f0ecec">
+      <Button layoutX="217.0" layoutY="607.0" mnemonicParsing="false" onAction="#cambiarPerfil" prefHeight="38.0" prefWidth="160.0" style="-fx-background-color: #192a3d;" text="Configurar Perfil" textFill="#f0ecec">
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Button>
-      <TableView editable="true" layoutX="18.0" layoutY="120.0" prefHeight="342.0" prefWidth="443.0">
+      <TableView editable="true" layoutX="12.0" layoutY="120.0" prefHeight="398.0" prefWidth="557.0">
         <columns>
-          <TableColumn prefWidth="106.39996147155762" text="Fecha" />
-          <TableColumn prefWidth="105.60004425048828" text="Origen" />
-            <TableColumn prefWidth="112.79998779296875" text="Destino" />
-            <TableColumn prefWidth="122.4000244140625" text="Pasajero" />
+          <TableColumn prefWidth="91.20001602172852" text="Fecha" />
+          <TableColumn prefWidth="84.0" text="Origen" />
+            <TableColumn prefWidth="96.79997253417969" text="Destino" />
+            <TableColumn prefWidth="100.79998779296875" text="Pasajero" />
+            <TableColumn prefWidth="95.20001220703125" text="Distancia" />
+            <TableColumn maxWidth="89.60003662109375" prefWidth="89.60003662109375" text="Costo" />
         </columns>
       </TableView>
-      <Text fill="#f2eded" layoutX="189.0" layoutY="594.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Algun Problema?" wrappingWidth="98.936767578125">
+      <Text fill="#f2eded" layoutX="226.0" layoutY="696.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Algun Problema?" wrappingWidth="142.40000009536743">
          <font>
-            <Font size="13.0" />
+            <Font size="17.0" />
          </font>
       </Text>
-      <Text fill="#f5eded" layoutX="144.0" layoutY="614.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contacta a un Administrador!" underline="true" wrappingWidth="190.13671875">
+      <Text fill="#f5eded" layoutX="202.0" layoutY="723.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contacta a un Administrador!" underline="true" wrappingWidth="190.13671875">
          <font>
             <Font size="14.0" />
          </font>
       </Text>
-      <ImageView fitHeight="30.0" fitWidth="244.0" layoutX="116.0" layoutY="630.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../img/logotrans.png" />
-         </image>
-      </ImageView>
     </children>
 </AnchorPane>

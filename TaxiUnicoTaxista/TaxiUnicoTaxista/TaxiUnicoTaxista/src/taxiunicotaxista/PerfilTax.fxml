@@ -8,17 +8,22 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="638.0" prefWidth="439.0" style="-fx-background-color: #0099cc;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="taxiunicotaxista.PerfilTaxController">
+<AnchorPane id="AnchorPane" prefHeight="759.0" prefWidth="521.0" style="-fx-background-color: #0099cc;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="taxiunicotaxista.PerfilTaxController">
     <children>
+      <ImageView fitHeight="708.0" fitWidth="574.0" layoutX="-7.0" layoutY="54.0" pickOnBounds="true">
+         <image>
+            <Image url="@../img/cellback1.jpg" />
+         </image>
+      </ImageView>
         <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
-      <Text fill="#f0e3e3" fontSmoothingType="LCD" layoutX="76.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TU INFORMACIÓN" textAlignment="CENTER" wrappingWidth="311.2000644207001">
+      <Text fill="#f0e3e3" fontSmoothingType="LCD" layoutX="131.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TU INFORMACIÓN" textAlignment="CENTER" wrappingWidth="311.2000644207001">
          <font>
-            <Font name="Book Antiqua" size="41.0" />
+            <Font name="Agency FB Bold" size="48.0" />
          </font>
       </Text>
-      <AnchorPane prefHeight="54.0" prefWidth="439.0" style="-fx-background-color: black;">
+      <AnchorPane prefHeight="54.0" prefWidth="567.0" style="-fx-background-color: black;">
          <children>
-            <Button layoutX="341.0" layoutY="12.0" mnemonicParsing="false" onAction="#salirApp" prefHeight="31.0" prefWidth="78.0" style="-fx-background-color: #192a3d;" text="Salir" textFill="#f2eded">
+            <Button layoutX="464.0" layoutY="11.0" mnemonicParsing="false" onAction="#salirApp" prefHeight="31.0" prefWidth="78.0" style="-fx-background-color: #192a3d;" text="Salir" textFill="#f2eded">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font></Button>
@@ -29,53 +34,58 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <Button layoutX="148.0" layoutY="419.0" mnemonicParsing="false" onAction="#volverDetalle" prefHeight="30.0" prefWidth="142.0" style="-fx-background-color: #192a3d;" text="Viaje Actual" textFill="#f5f3f3">
+      <Button layoutX="182.0" layoutY="509.0" mnemonicParsing="false" onAction="#volverDetalle" prefHeight="42.0" prefWidth="178.0" style="-fx-background-color: #192a3d;" text="Viaje Actual" textFill="#f5f3f3">
          <font>
-            <Font name="System Bold" size="13.0" />
+            <Font name="System Bold" size="20.0" />
          </font></Button>
-      <Button layoutX="148.0" layoutY="463.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="142.0" style="-fx-background-color: #192a3d;" text="Cambiar Información" textFill="#f2ecec">
+      <Button layoutX="182.0" layoutY="571.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="178.0" style="-fx-background-color: #192a3d;" text="Cambiar Información" textFill="#f2ecec">
          <font>
-            <Font name="System Bold" size="12.0" />
+            <Font name="System Bold" size="15.0" />
          </font></Button>
-      <AnchorPane layoutX="16.0" layoutY="154.0" opacity="0.09" prefHeight="234.0" prefWidth="406.0" style="-fx-background-color: black;" />
-      <Text fill="#fff4f4" layoutX="167.0" layoutY="527.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Algun Problema?" wrappingWidth="128.1624755859375">
+      <AnchorPane layoutX="13.0" layoutY="157.0" opacity="0.09" prefHeight="312.0" prefWidth="541.0" style="-fx-background-color: black;" />
+      <Text fill="#fff4f4" layoutX="216.0" layoutY="661.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Algun Problema?" wrappingWidth="128.1624755859375">
          <font>
             <Font size="15.0" />
          </font></Text>
-      <Text fill="#faf5f5" layoutX="128.0" layoutY="551.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contacta a un Administrador!" underline="true" wrappingWidth="206.1367068886757" />
+      <Text fill="#faf5f5" layoutX="192.0" layoutY="686.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contacta a un Administrador!" underline="true" wrappingWidth="206.1367068886757" />
       <Text fill="#ede8e8" layoutX="23.0" layoutY="190.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre: Andres Treviño Garza" underline="true" wrappingWidth="358.93670047413906">
          <font>
-            <Font size="17.0" />
+            <Font size="23.0" />
          </font>
       </Text>
-      <Text fill="#f0e7e7" layoutX="23.0" layoutY="227.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Correo: andres.g@gmail.com" underline="true" wrappingWidth="340.9789123535156">
+      <Text fill="#f0e7e7" layoutX="22.0" layoutY="237.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Correo: andres.g@gmail.com" underline="true" wrappingWidth="340.9789123535156">
          <font>
-            <Font size="17.0" />
+            <Font size="23.0" />
          </font>
       </Text>
-      <Text fill="#f8f1f1" layoutX="23.0" layoutY="267.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Teléfono: +525551234" underline="true" wrappingWidth="275.73669347262415">
+      <Text fill="#f8f1f1" layoutX="23.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Teléfono: +525551234" underline="true" wrappingWidth="275.73669347262415">
          <font>
-            <Font size="17.0" />
+            <Font size="23.0" />
          </font>
       </Text>
-      <Text fill="#f5eded" layoutX="23.0" layoutY="304.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Marca de Auto: Ford" underline="true" wrappingWidth="275.73669648170466">
-         <font>
-            <Font size="17.0" />
-         </font>
-      </Text>
-      <ImageView fitHeight="30.0" fitWidth="217.0" layoutX="111.0" layoutY="577.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="30.0" fitWidth="217.0" layoutX="182.0" layoutY="711.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../img/logotrans.png" />
          </image>
       </ImageView>
-      <Text fill="#f5eded" layoutX="23.0" layoutY="338.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Modelo: City" underline="true" wrappingWidth="275.73669648170466">
+      <Text fill="#f5eded" layoutX="23.0" layoutY="368.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Modelo: City" underline="true" wrappingWidth="275.73669648170466">
          <font>
-            <Font size="17.0" />
+            <Font size="23.0" />
          </font>
       </Text>
-      <Text fill="#f5eded" layoutX="23.0" layoutY="371.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Placas: RVH-500V" underline="true" wrappingWidth="275.73669648170466">
+      <Text fill="#f5eded" layoutX="23.0" layoutY="416.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Placas: RVH-500V" underline="true" wrappingWidth="275.73669648170466">
          <font>
-            <Font size="17.0" />
+            <Font size="23.0" />
+         </font>
+      </Text>
+      <Text fill="#f5eded" layoutX="23.0" layoutY="321.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Color: Azul" underline="true" wrappingWidth="275.73669648170466">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Text>
+      <Text fill="#f5eded" layoutX="23.0" layoutY="460.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Año: 2016" underline="true" wrappingWidth="275.73669648170466">
+         <font>
+            <Font size="23.0" />
          </font>
       </Text>
     </children>
