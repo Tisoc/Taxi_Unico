@@ -43,7 +43,6 @@ import taxiunicocliente.dbconnection.DBConnection;
  */
 public class CambiarContraController implements Initializable {
     DBConnection connectionClass = new DBConnection();
-    Connection connection = connectionClass.getConnection();
 
       public void cambiarHistorial(ActionEvent event) throws IOException
     {
