@@ -9,33 +9,36 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="491.0" prefWidth="908.0" style="-fx-background-color: #40caee;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="taxiunicoadmini.AltaClienteController">
+<AnchorPane id="AnchorPane" prefHeight="508.0" prefWidth="1066.0" style="-fx-background-color: 0;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="taxiunicoadmini.ConfiguracionController">
    <children>
-      <Text fill="#faf6f6" layoutX="407.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Configuración de Tarifa" underline="true" wrappingWidth="335.28558349609375">
+      <ImageView fitHeight="521.0" fitWidth="865.0" layoutX="200.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/background2.jpg" />
+         </image>
+      </ImageView>
+      <Text fill="#fa7676" layoutX="538.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Configuración de Tarifa" wrappingWidth="335.28558349609375">
          <font>
-            <Font size="30.0" />
+            <Font name="System Bold" size="30.0" />
          </font>
       </Text>
-      <Button layoutX="650.0" layoutY="170.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="105.0" text="Cambiar" />
-      <TextField layoutX="454.0" layoutY="243.0" prefHeight="26.0" prefWidth="186.0">
+      <Button layoutX="830.0" layoutY="209.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="145.0" style="-fx-background-color: #669999;" text="Cambiar" textFill="#fffbfb">
+         <font>
+            <Font name="Agency FB" size="23.0" />
+         </font></Button>
+      <TextField layoutX="613.0" layoutY="293.0" prefHeight="26.0" prefWidth="186.0">
          <effect>
             <InnerShadow />
          </effect></TextField>
-      <Text layoutX="303.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Costo por kilómetro:" wrappingWidth="169.60000658035278">
+      <Text fill="#f8f8f8" layoutX="348.0" layoutY="241.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Costo por kilómetro:" wrappingWidth="284.80001878738403">
          <font>
-            <Font size="16.0" />
+            <Font name="System Bold" size="25.0" />
          </font>
       </Text>
-      <Text layoutX="350.0" layoutY="262.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Multiplicador:" wrappingWidth="131.88068389892578">
+      <Text fill="#faf4f4" layoutX="418.0" layoutY="310.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Multiplicador:" wrappingWidth="209.46484972536564">
          <font>
-            <Font size="16.0" />
+            <Font name="System Bold" size="26.0" />
          </font>
       </Text>
-      <ImageView fitHeight="33.0" fitWidth="186.0" layoutX="708.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../img/logotrans.png" />
-         </image>
-      </ImageView>
       <AnchorPane prefHeight="508.0" prefWidth="200.0" style="-fx-background-color: grey;">
          <children>
             <AnchorPane layoutY="62.0" opacity="0.33" prefHeight="67.0" prefWidth="200.0" style="-fx-background-color: black;">
@@ -50,49 +53,47 @@
                <effect>
                   <InnerShadow />
                </effect></AnchorPane>
-            <Button layoutX="15.0" layoutY="14.0" mnemonicParsing="false" onAction="#verConfig" prefHeight="32.0" prefWidth="169.0" style="-fx-background-color: #40caee;" text="Configuración">
+            <Button layoutX="15.0" layoutY="14.0" mnemonicParsing="false" onAction="#verConfig" prefHeight="32.0" prefWidth="169.0" style="-fx-background-color: #669999;" text="Configuración" textFill="#f5f1f1">
                <font>
-                  <Font name="Book Antiqua" size="15.0" />
+                  <Font name="Agency FB" size="20.0" />
                </font></Button>
-            <AnchorPane layoutY="437.0" opacity="0.33" prefHeight="76.0" prefWidth="200.0" style="-fx-background-color: black;">
+            <AnchorPane layoutY="437.0" opacity="0.33" prefHeight="74.0" prefWidth="200.0" style="-fx-background-color: black;">
                <effect>
                   <InnerShadow />
                </effect></AnchorPane>
-            <Button layoutX="15.0" layoutY="144.0" mnemonicParsing="false" onAction="#changeScreenButtonPushed" prefHeight="32.0" prefWidth="169.0" style="-fx-background-color: #40caee;" text="Ver Clientes">
+            <Button layoutX="16.0" layoutY="136.0" mnemonicParsing="false" onAction="#changeScreenButtonPushed" prefHeight="32.0" prefWidth="169.0" style="-fx-background-color: white;" text="Ver Clientes">
                <font>
-                  <Font name="Book Antiqua" size="15.0" />
+                  <Font name="Agency FB" size="20.0" />
                </font></Button>
-            <Button layoutX="15.0" layoutY="268.0" mnemonicParsing="false" onAction="#cambiarVisTaxi" prefHeight="32.0" prefWidth="169.0" style="-fx-background-color: #40caee;" text="Ver Taxistas">
+            <Button layoutX="16.0" layoutY="264.0" mnemonicParsing="false" onAction="#cambiarVisTaxi" prefHeight="32.0" prefWidth="169.0" style="-fx-background-color: #669999;" text="Ver Taxistas" textFill="#faf4f4">
                <font>
-                  <Font name="Book Antiqua" size="15.0" />
+                  <Font name="Agency FB" size="20.0" />
                </font></Button>
-            <Button layoutX="15.0" layoutY="391.0" mnemonicParsing="false" onAction="#verHistorial" prefHeight="32.0" prefWidth="169.0" style="-fx-background-color: #40caee;" text="Historial de Viajes">
+            <Button layoutX="15.0" layoutY="387.0" mnemonicParsing="false" onAction="#verHistorial" prefHeight="32.0" prefWidth="169.0" style="-fx-background-color: white;" text="Historial de Viajes">
                <font>
-                  <Font name="Book Antiqua" size="15.0" />
+                  <Font name="Agency FB" size="20.0" />
                </font></Button>
          </children>
       </AnchorPane>
-      <TextField layoutX="454.0" layoutY="177.0" prefHeight="26.0" prefWidth="186.0">
+      <TextField layoutX="613.0" layoutY="218.0" prefHeight="26.0" prefWidth="186.0">
          <effect>
             <InnerShadow />
          </effect>
       </TextField>
-      <Text layoutX="491.0" layoutY="376.0" strokeType="OUTSIDE" strokeWidth="0.0" text="¿Algún problema?" wrappingWidth="199.99999856948853">
+      <Text fill="#fff9f9" layoutX="600.0" layoutY="464.0" strokeType="OUTSIDE" strokeWidth="0.0" text="¿Algún problema?" wrappingWidth="199.99999856948853">
          <font>
-            <Font size="19.0" />
+            <Font name="System Bold" size="19.0" />
          </font>
       </Text>
-      <Text layoutX="482.0" layoutY="404.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contacta a un Superior" underline="true" wrappingWidth="209.46484375" />
-      <Button layoutX="808.0" layoutY="450.0" mnemonicParsing="false" onAction="#salirApp" opacity="0.99" prefHeight="30.0" prefWidth="85.0" style="-fx-background-color: red;" text="Salir">
+      <Text fill="#f5eeee" layoutX="621.0" layoutY="482.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contacta a un Superior" underline="true" wrappingWidth="209.46484375" />
+      <Button layoutX="954.0" layoutY="462.0" mnemonicParsing="false" onAction="#salirApp" opacity="0.99" prefHeight="30.0" prefWidth="85.0" style="-fx-background-color: #ff6666;" text="Salir" textFill="#f0ebeb">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Button>
-      <Button layoutX="650.0" layoutY="236.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="106.0" text="Cambiar" />
-      <ImageView fitHeight="47.0" fitWidth="115.0" layoutX="200.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../img/logotaxi.png" />
-         </image>
-      </ImageView>
+      <Button layoutX="830.0" layoutY="281.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="146.0" style="-fx-background-color: #669999;" text="Cambiar" textFill="#fff9f9">
+         <font>
+            <Font name="Agency FB" size="25.0" />
+         </font></Button>
    </children>
 </AnchorPane>

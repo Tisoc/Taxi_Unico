@@ -10,18 +10,18 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="513.0" prefWidth="947.0" style="-fx-background-color: #40caee;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="taxiunicoadmini.HistorialController">
+<AnchorPane id="AnchorPane" prefHeight="510.0" prefWidth="1069.0" style="-fx-background-color: 0;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="taxiunicoadmini.HistorialController">
    <children>
-      <Text fill="#faf6f6" layoutX="471.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Historial de Viajes" underline="true" wrappingWidth="304.88555908203125">
-         <font>
-            <Font size="30.0" />
-         </font>
-      </Text>
-      <ImageView fitHeight="33.0" fitWidth="186.0" layoutX="741.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="515.0" fitWidth="875.0" layoutX="200.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../img/logotrans.png" />
+            <Image url="@../img/background2.jpg" />
          </image>
       </ImageView>
+      <Text fill="#f56161" layoutX="537.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Historial de Viajes" wrappingWidth="304.88555908203125">
+         <font>
+            <Font name="System Bold" size="34.0" />
+         </font>
+      </Text>
       <AnchorPane prefHeight="508.0" prefWidth="200.0" style="-fx-background-color: grey;">
          <children>
             <AnchorPane layoutY="62.0" opacity="0.33" prefHeight="67.0" prefWidth="200.0" style="-fx-background-color: black;">
@@ -36,62 +36,57 @@
                <effect>
                   <InnerShadow />
                </effect></AnchorPane>
-            <Button layoutX="15.0" layoutY="14.0" mnemonicParsing="false" onAction="#verConfig" prefHeight="32.0" prefWidth="169.0" style="-fx-background-color: #40caee;" text="Configuración">
+            <Button layoutX="15.0" layoutY="14.0" mnemonicParsing="false" onAction="#verConfig" prefHeight="32.0" prefWidth="169.0" style="-fx-background-color: #669999;" text="Configuración" textFill="#f5eded">
                <font>
-                  <Font name="Book Antiqua" size="15.0" />
+                  <Font name="Agency FB" size="20.0" />
                </font></Button>
-            <AnchorPane layoutY="437.0" opacity="0.33" prefHeight="76.0" prefWidth="200.0" style="-fx-background-color: black;">
+            <AnchorPane layoutY="448.0" opacity="0.33" prefHeight="67.0" prefWidth="200.0" style="-fx-background-color: black;">
                <effect>
                   <InnerShadow />
                </effect></AnchorPane>
-            <Button layoutX="15.0" layoutY="144.0" mnemonicParsing="false" onAction="#changeScreenButtonPushed" prefHeight="32.0" prefWidth="169.0" style="-fx-background-color: #40caee;" text="Ver Clientes">
+            <Button layoutX="15.0" layoutY="137.0" mnemonicParsing="false" onAction="#changeScreenButtonPushed" prefHeight="32.0" prefWidth="169.0" style="-fx-background-color: white;" text="Ver Clientes">
                <font>
-                  <Font name="Book Antiqua" size="15.0" />
+                  <Font name="Agency FB" size="20.0" />
                </font></Button>
-            <Button layoutX="15.0" layoutY="268.0" mnemonicParsing="false" onAction="#cambiarVisTaxi" prefHeight="32.0" prefWidth="169.0" style="-fx-background-color: #40caee;" text="Ver Taxistas">
+            <Button layoutX="15.0" layoutY="268.0" mnemonicParsing="false" onAction="#cambiarVisTaxi" prefHeight="32.0" prefWidth="169.0" style="-fx-background-color: #669999;" text="Ver Taxistas" textFill="#f8f4f4">
                <font>
-                  <Font name="Book Antiqua" size="15.0" />
+                  <Font name="Agency FB" size="20.0" />
                </font></Button>
-            <Button layoutX="15.0" layoutY="391.0" mnemonicParsing="false" onAction="#verHistorial" prefHeight="32.0" prefWidth="169.0" style="-fx-background-color: #40caee;" text="Historial de Viajes">
+            <Button layoutX="15.0" layoutY="393.0" mnemonicParsing="false" onAction="#verHistorial" prefHeight="39.0" prefWidth="170.0" style="-fx-background-color: white;" text="Historial de Viajes">
                <font>
-                  <Font name="Book Antiqua" size="15.0" />
+                  <Font name="Agency FB" size="20.0" />
                </font></Button>
          </children>
       </AnchorPane>
-      <Text layoutX="476.0" layoutY="452.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Algun problema?" wrappingWidth="199.99999856948853">
+      <Text fill="#e5e0e0" layoutX="589.0" layoutY="473.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Algun problema?" wrappingWidth="199.99999856948853">
          <font>
             <Font size="19.0" />
          </font>
       </Text>
-      <Text layoutX="471.0" layoutY="470.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contacta a un Superior" underline="true" wrappingWidth="209.46484375" />
-      <Button layoutX="834.0" layoutY="465.0" mnemonicParsing="false" onAction="#salirApp" opacity="0.99" prefHeight="30.0" prefWidth="85.0" style="-fx-background-color: red;" text="Salir">
+      <Text fill="#f2ebeb" layoutX="574.0" layoutY="493.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contacta a un Superior" underline="true" wrappingWidth="209.46484375" />
+      <Button layoutX="949.0" layoutY="465.0" mnemonicParsing="false" onAction="#salirApp" opacity="0.99" prefHeight="30.0" prefWidth="85.0" style="-fx-background-color: #ff6666;" text="Salir" textFill="#f2efef">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Button>
-      <ImageView fitHeight="50.0" fitWidth="141.0" layoutX="200.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../img/logotaxi.png" />
-         </image>
-      </ImageView>
-      <TableView fx:id="tableViewViaje" layoutX="596.0" layoutY="160.0" prefHeight="250.0" prefWidth="339.0">
+      <TableView fx:id="tableViewViaje" layoutX="675.0" layoutY="160.0" prefHeight="250.0" prefWidth="379.0">
         <columns>
-            <TableColumn fx:id="viajeOrigen" prefWidth="92.0" text="Origen" />
-            <TableColumn fx:id="viajeDestino" prefWidth="92.80007934570312" text="Destino" />
-            <TableColumn fx:id="viajeFecha" prefWidth="68.800048828125" text="Fecha" />
-            <TableColumn fx:id="viajeEstatus" prefWidth="82.40008544921875" text="Estatus" />
+            <TableColumn fx:id="viajeOrigen" prefWidth="104.0" text="Origen" />
+            <TableColumn fx:id="viajeDestino" prefWidth="100.0" text="Destino" />
+            <TableColumn fx:id="viajeFecha" prefWidth="89.5999755859375" text="Fecha" />
+            <TableColumn fx:id="viajeEstatus" prefWidth="85.5999755859375" text="Estatus" />
         </columns>
       </TableView>
-      <TableView fx:id="tableViewCliente" layoutX="210.0" layoutY="160.0" prefHeight="250.0" prefWidth="186.0">
+      <TableView fx:id="tableViewCliente" layoutX="217.0" layoutY="160.0" prefHeight="250.0" prefWidth="228.0">
         <columns>
-          <TableColumn fx:id="clientName" prefWidth="75.0" text="Cliente" />
-          <TableColumn fx:id="clientRating" prefWidth="110.0" text="Cliente Rating" />
+          <TableColumn fx:id="clientName" prefWidth="125.5999755859375" text="Cliente" />
+          <TableColumn fx:id="clientRating" prefWidth="101.5999755859375" text="Cliente Rating" />
         </columns>
       </TableView>
-      <TableView fx:id="tableViewTaxista" layoutX="396.0" layoutY="160.0" prefHeight="250.0" prefWidth="200.0">
+      <TableView fx:id="tableViewTaxista" layoutX="445.0" layoutY="160.0" prefHeight="250.0" prefWidth="234.0">
         <columns>
-          <TableColumn fx:id="taxistaName" prefWidth="90.0" text="Taxista" />
-          <TableColumn fx:id="taxistaRating" prefWidth="109.0" text="Taxista Rating" />
+          <TableColumn fx:id="taxistaName" prefWidth="132.79995727539062" text="Taxista" />
+          <TableColumn fx:id="taxistaRating" prefWidth="101.60003662109375" text="Taxista Rating" />
         </columns>
       </TableView>
    </children>
