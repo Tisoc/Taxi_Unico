@@ -16,24 +16,20 @@
             <Font size="30.0" />
          </font>
       </Text>
-      <Button layoutX="482.0" layoutY="334.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="115.0" text="Registrar" />
-      <TextField layoutX="339.0" layoutY="214.0">
+      <Button layoutX="482.0" layoutY="334.0" mnemonicParsing="false" onAction="#darDeAltaCliente" prefHeight="40.0" prefWidth="115.0" text="Registrar" />
+      <TextField fx:id="tfTelefono" layoutX="339.0" layoutY="214.0">
          <effect>
             <InnerShadow />
          </effect></TextField>
-      <TextField layoutX="339.0" layoutY="272.0">
+      <TextField fx:id="tfCorreo" layoutX="339.0" layoutY="272.0">
          <effect>
             <InnerShadow />
          </effect></TextField>
-      <TextField layoutX="684.0" layoutY="157.0">
+      <TextField fx:id="tfUsuario" layoutX="684.0" layoutY="157.0">
          <effect>
             <InnerShadow />
          </effect></TextField>
-      <TextField layoutX="684.0" layoutY="214.0">
-         <effect>
-            <InnerShadow />
-         </effect></TextField>
-      <TextField layoutX="684.0" layoutY="275.0">
+      <TextField fx:id="tfContrasena" layoutX="684.0" layoutY="214.0">
          <effect>
             <InnerShadow />
          </effect></TextField>
@@ -52,17 +48,12 @@
             <Font size="16.0" />
          </font>
       </Text>
-      <Text layoutX="611.0" layoutY="176.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dirección:" wrappingWidth="84.68073272705078">
+      <Text layoutX="611.0" layoutY="176.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Usuario:" wrappingWidth="84.68073272705078">
          <font>
             <Font size="16.0" />
          </font>
       </Text>
-      <Text layoutX="540.0" layoutY="234.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Numero de Tarjeta:" wrappingWidth="141.48072052001953">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Text>
-      <Text layoutX="526.0" layoutY="293.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Codigo de Seguridad:" wrappingWidth="195.99998593330383">
+      <Text layoutX="581.0" layoutY="232.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contraseña:" wrappingWidth="85.00000751018524">
          <font>
             <Font size="16.0" />
          </font>
@@ -108,7 +99,7 @@
                </font></Button>
          </children>
       </AnchorPane>
-      <TextField layoutX="339.0" layoutY="157.0">
+      <TextField fx:id="tfNombre" layoutX="339.0" layoutY="157.0">
          <effect>
             <InnerShadow />
          </effect>

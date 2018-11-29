@@ -9,31 +9,31 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="491.0" prefWidth="908.0" style="-fx-background-color: #40caee;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="taxiunicoadmini.AltaClienteController">
+<AnchorPane id="AnchorPane" prefHeight="491.0" prefWidth="908.0" style="-fx-background-color: #40caee;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="taxiunicoadmini.AltaTaxistaController">
    <children>
-      <Text fill="#faf6f6" layoutX="413.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dar de Alta Un Taxista" underline="true" wrappingWidth="304.88555908203125">
+      <Text fill="#faf6f6" layoutX="414.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dar de Alta Un Taxista" underline="true" wrappingWidth="304.88555908203125">
          <font>
             <Font size="30.0" />
          </font>
       </Text>
-      <Button layoutX="488.0" layoutY="400.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="115.0" text="Registrar" />
-      <TextField layoutX="339.0" layoutY="214.0">
+      <Button layoutX="488.0" layoutY="400.0" mnemonicParsing="false" onAction="#darDeAltaTaxista" prefHeight="40.0" prefWidth="115.0" text="Registrar" />
+      <TextField fx:id="taxistaTelephone" layoutX="339.0" layoutY="214.0">
          <effect>
             <InnerShadow />
          </effect></TextField>
-      <TextField layoutX="339.0" layoutY="272.0">
+      <TextField fx:id="taxistaEmail" layoutX="339.0" layoutY="272.0">
          <effect>
             <InnerShadow />
          </effect></TextField>
-      <TextField layoutX="684.0" layoutY="157.0">
+      <TextField fx:id="carroPlaca" layoutX="684.0" layoutY="157.0">
          <effect>
             <InnerShadow />
          </effect></TextField>
-      <TextField layoutX="684.0" layoutY="214.0">
+      <TextField fx:id="carroModelo" layoutX="684.0" layoutY="214.0">
          <effect>
             <InnerShadow />
          </effect></TextField>
-      <TextField layoutX="684.0" layoutY="275.0">
+      <TextField fx:id="carroColor" layoutX="684.0" layoutY="275.0">
          <effect>
             <InnerShadow />
          </effect></TextField>
@@ -62,7 +62,7 @@
             <Font size="16.0" />
          </font>
       </Text>
-      <Text layoutX="637.0" layoutY="293.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Color:" wrappingWidth="195.99998593330383">
+      <Text layoutX="630.0" layoutY="293.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Color:" wrappingWidth="44.99998593330383">
          <font>
             <Font size="16.0" />
          </font>
@@ -108,7 +108,7 @@
                </font></Button>
          </children>
       </AnchorPane>
-      <TextField layoutX="339.0" layoutY="157.0">
+      <TextField fx:id="taxistaName" layoutX="339.0" layoutY="157.0">
          <effect>
             <InnerShadow />
          </effect>
@@ -124,12 +124,12 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Button>
-      <TextField layoutX="339.0" layoutY="333.0">
+      <TextField fx:id="carroMarca" layoutX="339.0" layoutY="333.0">
          <effect>
             <InnerShadow />
          </effect>
       </TextField>
-      <TextField layoutX="684.0" layoutY="333.0">
+      <TextField fx:id="carroAño" layoutX="684.0" layoutY="333.0">
          <effect>
             <InnerShadow />
          </effect>
@@ -149,5 +149,25 @@
             <Image url="@../img/logotaxi.png" />
          </image>
       </ImageView>
+      <TextField fx:id="taxistaContrasena" layoutX="684.0" layoutY="117.0">
+         <effect>
+            <InnerShadow />
+         </effect>
+      </TextField>
+      <TextField fx:id="taxistaUser" layoutX="339.0" layoutY="117.0">
+         <effect>
+            <InnerShadow />
+         </effect>
+      </TextField>
+      <Text layoutX="280.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Usuario:" wrappingWidth="84.68073272705078">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <Text layoutX="595.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contraseña:" wrappingWidth="84.68073272705078">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>

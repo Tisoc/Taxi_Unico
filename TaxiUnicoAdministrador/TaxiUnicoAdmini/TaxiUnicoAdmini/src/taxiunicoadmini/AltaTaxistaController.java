@@ -5,9 +5,13 @@
  */
 package taxiunicoadmini;
 
+import clases.Carro;
 import clases.Taxista;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.CallableStatement;
+import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -20,8 +24,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import taxiunicoadmini.dbconnection.DBConnection;
 
 /**
  * FXML Controller class
@@ -29,45 +35,62 @@ import javafx.stage.Stage;
  * @author Alvaro Marquez
  */
 public class AltaTaxistaController implements Initializable {
+    DBConnection connectionClass = new DBConnection();
+    Connection connection = connectionClass.getConnection();
     //columnas 
     @FXML
-    private TableView<Taxista> tableView = new TableView<>();
+    TextField taxistaName;
     @FXML
-    private TableColumn<Taxista, String> taxistaName = new TableColumn<>();
+    TextField taxistaEmail;
     @FXML
-    private TableColumn<Taxista, String> taxistaEmail = new TableColumn<>();
+    TextField taxistaTelephone;
     @FXML
-    private TableColumn<Taxista, String> taxistaTelephone = new TableColumn<>();
+    TextField taxistaUser;
     @FXML
-    private TableColumn<Taxista, String> taxistaUser = new TableColumn<>();
+    TextField taxistaContrasena;
     @FXML
-    private TableColumn<Taxista, String> taxistaStatus = new TableColumn<>();
+    private TextField carroPlaca;
     @FXML
-    private TableColumn<Taxista, String> taxistaRating = new TableColumn<>();
+    private TextField carroMarca;
+    @FXML
+    private TextField carroModelo;
+    @FXML
+    private TextField carroColor;
+    @FXML
+    private TextField carroAño;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-        taxistaName.setCellValueFactory(new PropertyValueFactory<Taxista, String>("Nombre"));
-        taxistaEmail.setCellValueFactory(new PropertyValueFactory<Taxista, String>("Correo"));
-        taxistaTelephone.setCellValueFactory(new PropertyValueFactory<Taxista, String>("Telefono"));
-        taxistaUser.setCellValueFactory(new PropertyValueFactory<Taxista, String>("Usuario"));
-        taxistaStatus.setCellValueFactory(new PropertyValueFactory<Taxista, String>("Estatus"));
-        taxistaRating.setCellValueFactory(new PropertyValueFactory<Taxista, String>("Rating"));
-        tableView.setItems(getClientInfo());
     }
     
-    public ObservableList<Taxista> getClientInfo() {
+    public void darDeAltaTaxista() throws SQLException {
+        //preparar para procedimiento almacenado
+        CallableStatement statement = connection.prepareCall("{call crear_taxista(?,?,?,?,?,?,?,?,?,?)}");
+        
+        String nombre = taxistaName.getText();
+        String correo = taxistaEmail.getText();
+        String telefono = taxistaTelephone.getText();
+        String usuario = taxistaUser.getText();
+        String contrasena = taxistaContrasena.getText();
+        String placa = carroPlaca.getText();
+        String marca = carroMarca.getText();
+        String modelo = carroModelo.getText();
+        String color = carroColor.getText();
+        String año = carroAño.getText();
 
-        ObservableList<Taxista> taxistas = FXCollections.observableArrayList();
-        taxistas.add(new Taxista("Jaime E. Garza","jaimegarza97@gmail.com", "83636383", "Jaime1997", true, 5));
-        taxistas.add(new Taxista("Pablo Andrade", "pabloemilio97@gmail.com", "83636384", "PabloMan", true, 0));
-        taxistas.add(new Taxista("Alvaro M.", "alvaro@gmail.com", "83636385", "Alvarol", true, 0));
-        taxistas.add(new Taxista("Alex Lara", "alexanderlarius@gmail.com", "83636386", "AlexXxX", true, 0));
-        taxistas.add(new Taxista("Pedro Pedrina", "P3P3@gmail.com", "83636383","PePe88", false, 0));
+        statement.setString(1, usuario);
+        statement.setString(2, contrasena);
+        statement.setString(3, nombre);
+        statement.setString(4, correo);
+        statement.setString(5, telefono);
+        statement.setString(6, marca);
+        statement.setString(7, placa);
+        statement.setString(8, modelo);
+        statement.setString(9, color);
+        statement.setString(10, año);
 
-        return taxistas;
-
+        //llamar procedimiento almacenado
+        statement.execute();
     }
       public void changeScreenButtonPushed(ActionEvent event) throws IOException
     {

@@ -28,6 +28,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import taxiunicoadmini.dbconnection.DBConnection;
@@ -40,91 +41,42 @@ import taxiunicoadmini.dbconnection.DBConnection;
 public class AltaClienteController implements Initializable {
     DBConnection connectionClass = new DBConnection();
     Connection connection = connectionClass.getConnection();
-    //columnas 
     @FXML
-    private TableView<Cliente> tableView = new TableView<>();
+    TextField tfNombre;
     @FXML
-    private TableColumn<Cliente, String> clientName = new TableColumn<>();
+    TextField tfTelefono;
     @FXML
-    private TableColumn<Cliente, String> clientEmail = new TableColumn<>();
+    TextField tfCorreo;
     @FXML
-    private TableColumn<Cliente, String> clientTelephone = new TableColumn<>();
+    TextField tfUsuario;
     @FXML
-    private TableColumn<Cliente, String> clientUser = new TableColumn<>();
-    @FXML
-    private TableColumn<Cliente, String> clientStatus = new TableColumn<>();
-    @FXML
-    private TableColumn<Cliente, String> clientRating = new TableColumn<>();
+    TextField tfContrasena;
+    
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-        clientName.setCellValueFactory(new PropertyValueFactory<Cliente, String>("Nombre"));
-        clientEmail.setCellValueFactory(new PropertyValueFactory<Cliente, String>("Correo"));
-        clientTelephone.setCellValueFactory(new PropertyValueFactory<Cliente, String>("Telefono"));
-        clientUser.setCellValueFactory(new PropertyValueFactory<Cliente, String>("Usuario"));
-        clientStatus.setCellValueFactory(new PropertyValueFactory<Cliente, String>("Estatus"));
-        clientRating.setCellValueFactory(new PropertyValueFactory<Cliente, String>("Rating"));
-        tableView.setItems(getClientInfo());
     }
     
-    public ObservableList<Cliente> getClientInfo() {
-        ObservableList<Cliente> clientes = FXCollections.observableArrayList();
-        try {
-            //preparar para procedimiento almacenado
-            CallableStatement statement = connection.prepareCall("{call view_clientes()}");
+    public void darDeAltaCliente() throws SQLException {
+        //preparar para procedimiento almacenado
+        CallableStatement statement = connection.prepareCall("{call crear_cliente(?,?,?,?,?)}");
+        
+        String usuario = tfUsuario.getText();
+        String contrasena = tfContrasena.getText();
+        String nombre = tfNombre.getText();
+        String correo = tfCorreo.getText();
+        String telefono = tfTelefono.getText();
+        
+        statement.setString(1, usuario);
+        statement.setString(2, contrasena);
+        statement.setString(3, nombre);
+        statement.setString(4, correo);
+        statement.setString(5, telefono);
 
-            //llamar procedimiento almacenado
-            statement.execute();
-            ResultSet resultSet = statement.getResultSet();
-            ResultSetMetaData metaData = resultSet.getMetaData();
-            //obtener número de columna de cada atributo
-            int numCols = metaData.getColumnCount(); //number of column
-            int numColUsuario, numColNombre, numColCorreo, numColTelefono, numColRating, numColEstatus;
-            numColUsuario = numColNombre = numColCorreo = numColTelefono = numColRating = numColEstatus = 1;
-            for (int i = 1; i <= numCols; i++) {
-                String colName = metaData.getColumnLabel(i);
-                switch (colName) {
-                    case "Usuario":
-                        numColUsuario = i;
-                        break;
-                    case "Nombre":
-                        numColNombre = i;
-                        break;
-                    case "Correo":
-                        numColCorreo = i;
-                        break;
-                    case "Telefono":
-                        numColTelefono = i;
-                        break;
-                    case "Estatus":
-                        numColEstatus = i;
-                        break;
-                    case "Rating":
-                        numColRating = i;
-                        break;
-                }
-            }
-            //añadir clientes a la lista a regresar
-            while (resultSet.next()) {
-                String usuario = resultSet.getString(numColUsuario);
-                String nombre = resultSet.getString(numColNombre);
-                String correo = resultSet.getString(numColCorreo);
-                String telefono = resultSet.getString(numColTelefono);
-                String rating = resultSet.getString(numColRating);
-                String estatus = resultSet.getString(numColEstatus);
-                boolean booleanEstatus = (Integer.parseInt(estatus) > 0);
-                double doubleRating = Double.parseDouble(rating);
-                clientes.add(new Cliente(nombre, correo, usuario, telefono, booleanEstatus, doubleRating));
-            }
-            //else muestra mensaje de error
-        } catch (SQLException ex) {
-            Logger.getLogger(FXMLDocumentController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return clientes;
+        //llamar procedimiento almacenado
+        statement.execute();
     }
-
-      public void changeScreenButtonPushed(ActionEvent event) throws IOException
+     public void changeScreenButtonPushed(ActionEvent event) throws IOException
     {
         Parent tableViewParent = FXMLLoader.load(getClass().getResource("visualClien.fxml"));
         Scene tableViewScene = new Scene(tableViewParent);
