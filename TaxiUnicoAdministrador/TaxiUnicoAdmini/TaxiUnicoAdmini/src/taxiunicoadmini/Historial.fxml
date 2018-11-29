@@ -69,26 +69,7 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Button>
-<<<<<<< HEAD
-      <TableView fx:id="tableViewViaje" layoutX="675.0" layoutY="160.0" prefHeight="250.0" prefWidth="379.0">
-        <columns>
-            <TableColumn fx:id="viajeOrigen" prefWidth="104.0" text="Origen" />
-            <TableColumn fx:id="viajeDestino" prefWidth="100.0" text="Destino" />
-            <TableColumn fx:id="viajeFecha" prefWidth="89.5999755859375" text="Fecha" />
-            <TableColumn fx:id="viajeEstatus" prefWidth="85.5999755859375" text="Estatus" />
-        </columns>
-      </TableView>
-      <TableView fx:id="tableViewCliente" layoutX="217.0" layoutY="160.0" prefHeight="250.0" prefWidth="228.0">
-        <columns>
-          <TableColumn fx:id="clientName" prefWidth="125.5999755859375" text="Cliente" />
-          <TableColumn fx:id="clientRating" prefWidth="101.5999755859375" text="Cliente Rating" />
-        </columns>
-      </TableView>
-      <TableView fx:id="tableViewTaxista" layoutX="445.0" layoutY="160.0" prefHeight="250.0" prefWidth="234.0">
-        <columns>
-          <TableColumn fx:id="taxistaName" prefWidth="132.79995727539062" text="Taxista" />
-          <TableColumn fx:id="taxistaRating" prefWidth="101.60003662109375" text="Taxista Rating" />
-=======
+
       <ImageView fitHeight="50.0" fitWidth="141.0" layoutX="200.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../img/logotaxi.png" />
@@ -114,7 +95,7 @@
         <columns>
           <TableColumn fx:id="taxistaName" prefWidth="56.0" text="Taxista" />
           <TableColumn fx:id="taxistaRating" prefWidth="90.0" text="Taxista Rating" />
->>>>>>> 4dfb38b43df530b1bc0754455b9df3008a67094f
+
         </columns>
       </TableView>
    </children>
