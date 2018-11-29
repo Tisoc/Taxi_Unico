@@ -16,17 +16,17 @@
             <Font size="30.0" />
          </font>
       </Text>
-      <Button layoutX="650.0" layoutY="170.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="105.0" text="Cambiar" />
-      <TextField layoutX="454.0" layoutY="243.0" prefHeight="26.0" prefWidth="186.0">
+      <Button layoutX="650.0" layoutY="170.0" mnemonicParsing="false" onAction="#cambiarCostoPorKm" prefHeight="40.0" prefWidth="105.0" text="Cambiar" />
+      <TextField fx:id="tfMultiplicador" layoutX="454.0" layoutY="243.0" prefHeight="26.0" prefWidth="186.0">
          <effect>
             <InnerShadow />
          </effect></TextField>
-      <Text layoutX="303.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Costo por kilómetro:" wrappingWidth="169.60000658035278">
+      <Text layoutX="276.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Costo por kilómetro (pesos mex):" wrappingWidth="169.60000658035278">
          <font>
             <Font size="16.0" />
          </font>
       </Text>
-      <Text layoutX="350.0" layoutY="262.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Multiplicador:" wrappingWidth="131.88068389892578">
+      <Text layoutX="341.0" layoutY="262.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Multiplicador:" wrappingWidth="104.9999965429306">
          <font>
             <Font size="16.0" />
          </font>
@@ -72,7 +72,7 @@
                </font></Button>
          </children>
       </AnchorPane>
-      <TextField layoutX="454.0" layoutY="177.0" prefHeight="26.0" prefWidth="186.0">
+      <TextField fx:id="tfCostoPorKm" layoutX="454.0" layoutY="177.0" prefHeight="26.0" prefWidth="186.0">
          <effect>
             <InnerShadow />
          </effect>
@@ -88,7 +88,7 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Button>
-      <Button layoutX="650.0" layoutY="236.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="106.0" text="Cambiar" />
+      <Button layoutX="650.0" layoutY="236.0" mnemonicParsing="false" onAction="#cambiarMultiplicador" prefHeight="40.0" prefWidth="106.0" text="Cambiar" />
       <ImageView fitHeight="47.0" fitWidth="115.0" layoutX="200.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../img/logotaxi.png" />

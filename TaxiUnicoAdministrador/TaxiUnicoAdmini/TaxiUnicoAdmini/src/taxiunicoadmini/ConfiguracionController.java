@@ -7,14 +7,20 @@ package taxiunicoadmini;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.CallableStatement;
+import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import taxiunicoadmini.dbconnection.DBConnection;
 
 /**
  * FXML Controller class
@@ -22,7 +28,13 @@ import javafx.stage.Stage;
  * @author Alvaro Marquez
  */
 public class ConfiguracionController implements Initializable {
-
+    DBConnection connectionClass = new DBConnection();
+    Connection connection = connectionClass.getConnection();
+    
+    @FXML
+    TextField tfMultiplicador;
+    @FXML
+    TextField tfCostoPorKm;
     /**
      * Initializes the controller class.
      */
@@ -30,6 +42,20 @@ public class ConfiguracionController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+    
+    public void cambiarMultiplicador(ActionEvent event) throws IOException, SQLException{
+        double multiplicador = Double.parseDouble(tfMultiplicador.getText());
+        CallableStatement statement = connection.prepareCall("{call actualizar_multiplicador(?)}");
+        statement.setDouble(1, multiplicador);
+        statement.execute();
+    }
+    
+    public void cambiarCostoPorKm(ActionEvent event) throws IOException, SQLException{
+        double costoPorKm = Double.parseDouble(tfCostoPorKm.getText());
+        CallableStatement statement = connection.prepareCall("{call actualizar_costoPorKm(?)}");
+        statement.setDouble(1, costoPorKm);
+        statement.execute();
+    }
     
       public void changeScreenButtonPushed(ActionEvent event) throws IOException
     {

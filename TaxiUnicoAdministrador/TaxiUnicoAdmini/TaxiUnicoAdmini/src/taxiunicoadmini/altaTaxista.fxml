@@ -57,7 +57,7 @@
             <Font size="16.0" />
          </font>
       </Text>
-      <Text layoutX="620.0" layoutY="232.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Modelo:" wrappingWidth="141.48072052001953">
+      <Text layoutX="622.0" layoutY="232.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Modelo:" wrappingWidth="61.68072235584259">
          <font>
             <Font size="16.0" />
          </font>
@@ -134,12 +134,12 @@
             <InnerShadow />
          </effect>
       </TextField>
-      <Text layoutX="630.0" layoutY="175.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Placas:" wrappingWidth="141.48072052001953">
+      <Text layoutX="621.0" layoutY="175.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Placas:" wrappingWidth="52.48072052001953">
          <font>
             <Font size="16.0" />
          </font>
       </Text>
-      <Text layoutX="647.0" layoutY="351.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Año:" wrappingWidth="141.48072052001953">
+      <Text layoutX="634.0" layoutY="351.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Año:" wrappingWidth="37.48072052001953">
          <font>
             <Font size="16.0" />
          </font>
@@ -159,7 +159,7 @@
             <InnerShadow />
          </effect>
       </TextField>
-      <Text layoutX="280.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Usuario:" wrappingWidth="84.68073272705078">
+      <Text layoutX="267.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Usuario:" wrappingWidth="61.68073272705078">
          <font>
             <Font size="16.0" />
          </font>
