@@ -10,19 +10,22 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="491.0" prefWidth="908.0" style="-fx-background-color: #40caee;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="taxiunicoadmini.VisualClienController">
+<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="1050.0" style="-fx-background-color: 0;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="taxiunicoadmini.VisualClienController">
    <children>
-      <Text fill="#faf6f6" layoutX="413.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Visualizar Clientes" underline="true" wrappingWidth="304.88555908203125">
-         <font>
-            <Font size="30.0" />
-         </font>
-      </Text>
-      <Button layoutX="441.0" layoutY="372.0" mnemonicParsing="false" onAction="#cambiarAltaClie" prefHeight="40.0" prefWidth="180.0" text="Agregar Nuevo Cliente" />
-      <ImageView fitHeight="33.0" fitWidth="186.0" layoutX="708.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="515.0" fitWidth="872.0" layoutX="200.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../img/logotrans.png" />
+            <Image url="@../img/background2.jpg" />
          </image>
       </ImageView>
+      <Text fill="#fd6a6a" layoutX="523.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Visualizar Clientes" wrappingWidth="304.88555908203125">
+         <font>
+            <Font name="System Bold" size="30.0" />
+         </font>
+      </Text>
+      <Button layoutX="551.0" layoutY="395.0" mnemonicParsing="false" onAction="#cambiarAltaClie" prefHeight="40.0" prefWidth="180.0" style="-fx-background-color: #669999;" text="Agregar Nuevo Cliente" textFill="#fffefe">
+         <font>
+            <Font name="Agency FB" size="20.0" />
+         </font></Button>
       <AnchorPane prefHeight="508.0" prefWidth="200.0" style="-fx-background-color: grey;">
          <children>
             <AnchorPane layoutY="62.0" opacity="0.33" prefHeight="67.0" prefWidth="200.0" style="-fx-background-color: black;">
@@ -37,52 +40,47 @@
                <effect>
                   <InnerShadow />
                </effect></AnchorPane>
-            <Button layoutX="15.0" layoutY="14.0" mnemonicParsing="false" onAction="#verConfig" prefHeight="32.0" prefWidth="169.0" style="-fx-background-color: #40caee;" text="Configuración">
+            <Button layoutX="15.0" layoutY="14.0" mnemonicParsing="false" onAction="#verConfig" prefHeight="32.0" prefWidth="169.0" style="-fx-background-color: #669999;" text="Configuración" textFill="#f0ecec">
                <font>
-                  <Font name="Book Antiqua" size="15.0" />
+                  <Font name="Agency FB" size="20.0" />
                </font></Button>
             <AnchorPane layoutY="437.0" opacity="0.33" prefHeight="76.0" prefWidth="200.0" style="-fx-background-color: black;">
                <effect>
                   <InnerShadow />
                </effect></AnchorPane>
-            <Button layoutX="15.0" layoutY="144.0" mnemonicParsing="false" onAction="#changeScreenButtonPushed" prefHeight="32.0" prefWidth="169.0" style="-fx-background-color: #40caee;" text="Ver Clientes">
+            <Button layoutX="15.0" layoutY="137.0" mnemonicParsing="false" onAction="#changeScreenButtonPushed" prefHeight="32.0" prefWidth="169.0" style="-fx-background-color: white;" text="Ver Clientes">
                <font>
-                  <Font name="Book Antiqua" size="15.0" />
+                  <Font name="Agency FB" size="20.0" />
                </font></Button>
-            <Button layoutX="15.0" layoutY="268.0" mnemonicParsing="false" onAction="#cambiarVisTaxi" prefHeight="32.0" prefWidth="169.0" style="-fx-background-color: #40caee;" text="Ver Taxistas">
+            <Button layoutX="15.0" layoutY="263.0" mnemonicParsing="false" onAction="#cambiarVisTaxi" prefHeight="32.0" prefWidth="169.0" style="-fx-background-color: #669999;" text="Ver Taxistas" textFill="#faf4f4">
                <font>
-                  <Font name="Book Antiqua" size="15.0" />
+                  <Font name="Agency FB" size="20.0" />
                </font></Button>
-            <Button layoutX="15.0" layoutY="391.0" mnemonicParsing="false" onAction="#verHistorial" prefHeight="32.0" prefWidth="169.0" style="-fx-background-color: #40caee;" text="Historial de Viajes">
+            <Button layoutX="15.0" layoutY="385.0" mnemonicParsing="false" onAction="#verHistorial" prefHeight="32.0" prefWidth="169.0" style="-fx-background-color: white;" text="Historial de Viajes">
                <font>
-                  <Font name="Book Antiqua" size="15.0" />
+                  <Font name="Agency FB" size="20.0" />
                </font></Button>
          </children>
       </AnchorPane>
-      <Text layoutX="474.0" layoutY="473.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Algun problema?" wrappingWidth="199.99999856948853">
+      <Text fill="WHITE" layoutX="575.0" layoutY="470.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Algun problema?" wrappingWidth="199.99999856948853">
          <font>
             <Font size="19.0" />
          </font>
       </Text>
-      <Text layoutX="465.0" layoutY="493.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contacta a un Superior" underline="true" wrappingWidth="209.46484375" />
-      <Button layoutX="808.0" layoutY="465.0" mnemonicParsing="false" onAction="#salirApp" opacity="0.99" prefHeight="30.0" prefWidth="85.0" style="-fx-background-color: red;" text="Salir">
+      <Text fill="#f8f8f8" layoutX="570.0" layoutY="496.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contacta a un Superior" underline="true" wrappingWidth="209.46484375" />
+      <Button layoutX="965.0" layoutY="468.0" mnemonicParsing="false" onAction="#salirApp" opacity="0.99" prefHeight="30.0" prefWidth="85.0" style="-fx-background-color: #ff6666;" text="Salir" textFill="#f8f8f8">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Button>
-      <ImageView fitHeight="50.0" fitWidth="141.0" layoutX="200.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../img/logotaxi.png" />
-         </image>
-      </ImageView>
-      <TableView fx:id="tableView" layoutX="231.0" layoutY="145.0" prefHeight="200.0" prefWidth="662.0">
+      <TableView fx:id="tableView" layoutX="231.0" layoutY="101.0" prefHeight="279.0" prefWidth="806.0">
         <columns>
           <TableColumn fx:id="clientName" prefWidth="134.0" text="Nombre" />
-            <TableColumn fx:id="clientEmail" prefWidth="119.0" text="Correo" />
-            <TableColumn fx:id="clientTelephone" prefWidth="87.0" text="Telefono" />
-            <TableColumn fx:id="clientUser" prefWidth="121.0" text="Usuario" />
-            <TableColumn fx:id="clientStatus" prefWidth="117.0" text="Estatus" />
-            <TableColumn fx:id="clientRating" prefWidth="83.0" text="Rating" />
+            <TableColumn fx:id="clientEmail" prefWidth="172.7999267578125" text="Correo" />
+            <TableColumn fx:id="clientTelephone" prefWidth="157.60003662109375" text="Telefono" />
+            <TableColumn fx:id="clientUser" prefWidth="151.20001220703125" text="Usuario" />
+            <TableColumn fx:id="clientStatus" prefWidth="96.79998779296875" text="Estatus" />
+            <TableColumn fx:id="clientRating" prefWidth="88.79998779296875" text="Rating" />
         </columns>
       </TableView>
    </children>
