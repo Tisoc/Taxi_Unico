@@ -58,7 +58,7 @@
                </font></Button>
          </children>
       </AnchorPane>
-      <Text fill="#e5e0e0" layoutX="589.0" layoutY="473.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Algun problema?" wrappingWidth="199.99999856948853">
+      <Text fill="#e5e0e0" layoutX="565.0" layoutY="466.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Algun problema?" wrappingWidth="199.99999856948853">
          <font>
             <Font size="19.0" />
          </font>
@@ -69,12 +69,6 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Button>
-
-      <ImageView fitHeight="50.0" fitWidth="141.0" layoutX="200.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../img/logotaxi.png" />
-         </image>
-      </ImageView>
       <TableView fx:id="tableViewViaje" layoutX="536.0" layoutY="160.0" prefHeight="250.0" prefWidth="538.0">
         <columns>
             <TableColumn fx:id="viajeOrigen" prefWidth="116.79998779296875" text="Origen" />

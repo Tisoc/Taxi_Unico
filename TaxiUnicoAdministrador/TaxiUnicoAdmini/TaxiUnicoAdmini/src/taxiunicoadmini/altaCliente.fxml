@@ -25,19 +25,19 @@
          <font>
             <Font name="Agency FB Bold" size="28.0" />
          </font></Button>
-      <TextField layoutX="431.0" layoutY="247.0">
+      <TextField fx:id="tfTelefono" layoutX="431.0" layoutY="247.0">
          <effect>
             <InnerShadow />
          </effect></TextField>
-      <TextField layoutX="431.0" layoutY="298.0">
+      <TextField fx:id="tfCorreo" layoutX="431.0" layoutY="298.0">
          <effect>
             <InnerShadow />
          </effect></TextField>
-      <TextField layoutX="753.0" layoutY="247.0">
+      <TextField fx:id="tfUsuario" layoutX="753.0" layoutY="247.0">
          <effect>
             <InnerShadow />
          </effect></TextField>
-      <TextField layoutX="753.0" layoutY="298.0">
+      <TextField fx:id="tfContrasena" layoutX="753.0" layoutY="298.0">
          <effect>
             <InnerShadow />
          </effect></TextField>
@@ -102,7 +102,7 @@
                </font></Button>
          </children>
       </AnchorPane>
-      <TextField layoutX="431.0" layoutY="193.0">
+      <TextField fx:id="tfNombre" layoutX="431.0" layoutY="193.0">
          <effect>
             <InnerShadow />
          </effect>
