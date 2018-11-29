@@ -18,21 +18,19 @@
 --
 -- Table structure for table `administrador`
 --
-CREATE DATABASE IF NOT EXISTS taxiunico;
-USE taxiunico;
 
 DROP TABLE IF EXISTS `administrador`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `administrador` (
-  `Admin_ID` int(11) NOT NULL,
+  `Admin_ID` int(11) NOT NULL AUTO_INCREMENT,
   `Usuario` varchar(50) DEFAULT NULL,
   `Contrasena` varchar(50) DEFAULT NULL,
   `Nombre` varchar(50) DEFAULT NULL,
   `Correo` varchar(50) DEFAULT NULL,
   `Telefono` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`Admin_ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -41,7 +39,7 @@ CREATE TABLE `administrador` (
 
 LOCK TABLES `administrador` WRITE;
 /*!40000 ALTER TABLE `administrador` DISABLE KEYS */;
-INSERT INTO `administrador` VALUES (1,'JohnSada','SHPWLNSHA','John Sada','johnsada97@gmail.com','836343682'),(2,'JoanSada','SHPWLNASHA','Joan Sada','joansada97@gmail.com','836343683'),(3,'JeanSada','SHPWLNASHADA','Jean Sada','jeansada97@gmail.com','836343684'),(4,'JuanSada','SHPWLNASHADADA','Juan Sada','juansada97@gmail.com','836343685'),(5,'JaneSada','SHPWLNASHADADADA','Jane Sada','janesada97@gmail.com','836343686'),(6,'1','1','backdoor','backdoor@mail.com','11111111');
+INSERT INTO `administrador` VALUES (1,'JohnSada','SHPWLNSHA','John Sada','johnsada97@gmail.com','836343682'),(2,'JoanSada','SHPWLNASHA','Joan Sada','joansada97@gmail.com','836343683'),(3,'JeanSada','SHPWLNASHADA','Jean Sada','jeansada97@gmail.com','836343684'),(4,'JuanSada','SHPWLNASHADADA','Juan Sada','juansada97@gmail.com','836343685'),(5,'JaneSada','SHPWLNASHADADADA','Jane Sada','janesada97@gmail.com','836343686'),(6,'1','1','dummy','dummy@gmail.com','0000000');
 /*!40000 ALTER TABLE `administrador` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -71,7 +69,7 @@ CREATE TABLE `carro` (
 
 LOCK TABLES `carro` WRITE;
 /*!40000 ALTER TABLE `carro` DISABLE KEYS */;
-INSERT INTO `carro` VALUES ('HAS-09-76',3,'Honda','Accord',1999,'Azul'),('SAR-21-81',5,'Tesla','Model-T',2018,'Rojo'),('SMP-17-34',2,'Toyota','Yaris R',2018,'Rojo'),('SSH-33-83',1,'Audi','A3',2014,'Gris'),('SSJ-23-99',4,'Nissan','Sentra',2015,'Gris');
+INSERT INTO `carro` VALUES ('CHK700',7,'Ford','Fiesta',2000,'Rojo'),('HAS-09-76',3,'Honda','Accord',1999,'Azul'),('SAR-21-81',5,'Tesla','Model-T',2018,'Rojo'),('SMP-17-34',2,'Toyota','Yaris R',2018,'Rojo'),('SSH-33-83',1,'Audi','A3',2014,'Gris'),('SSJ-23-99',4,'Nissan','Sentra',2015,'Gris');
 /*!40000 ALTER TABLE `carro` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -83,7 +81,7 @@ DROP TABLE IF EXISTS `cliente`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cliente` (
-  `Cliente_ID` int(11) NOT NULL,
+  `Cliente_ID` int(11) NOT NULL AUTO_INCREMENT,
   `Estatus` bit(1) DEFAULT NULL,
   `Usuario` varchar(50) DEFAULT NULL,
   `Contrasena` varchar(50) DEFAULT NULL,
@@ -92,7 +90,7 @@ CREATE TABLE `cliente` (
   `Telefono` varchar(50) DEFAULT NULL,
   `Rating` float DEFAULT NULL,
   PRIMARY KEY (`Cliente_ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -101,7 +99,7 @@ CREATE TABLE `cliente` (
 
 LOCK TABLES `cliente` WRITE;
 /*!40000 ALTER TABLE `cliente` DISABLE KEYS */;
-INSERT INTO `cliente` VALUES (1,'','Jaime1997','JaimeGarza','Jaime E. Garza','jaimegarza97@gmail.com','83636383',5),(2,'','PabloMan','pabloSF','Pablo Andrade','pabloemilio97@gmail.com','83636384',0),(3,'','Alvarol','SaxMann','Alvaro M.','alvaro@gmail.com','83636385',0),(4,'','AlexXxX','yeahboi81','Alex Lara','alexanderlarius@gmail.com','83636386',0),(5,'\0','PePe88','holasoyopepe','Pedro Pedrina','P3P3@gmail.com','83636383',0),(6,'\0','1','1','backdoor','backdoor@mail.com','11111111',0);
+INSERT INTO `cliente` VALUES (1,'','Jaime1997','JaimeGarza','Jaime E. Garza','jaimegarza97@gmail.com','83636383',0),(2,'','PabloMan','pabloSF','Pablo Andrade','pabloemilio97@gmail.com','83636384',0),(3,'','Alvarol','SaxMann','Alvaro M.','alvaro@gmail.com','83636385',0),(4,'','AlexXxX','yeahboi81','Alex Lara','alexanderlarius@gmail.com','83636386',0),(5,'\0','PePe88','holasoyopepe','Pedro Pedrina','P3P3@gmail.com','83636383',0),(6,'','1','1','dummy','dummy@gmail.com','0000000000',0);
 /*!40000 ALTER TABLE `cliente` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -113,11 +111,11 @@ DROP TABLE IF EXISTS `encuestacliente`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `encuestacliente` (
-  `EncuestaCliente_ID` int(11) NOT NULL,
+  `EncuestaCliente_ID` int(11) NOT NULL AUTO_INCREMENT,
   `Comentarios` varchar(50) DEFAULT NULL,
   `Calificacion` int(11) DEFAULT NULL,
   PRIMARY KEY (`EncuestaCliente_ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -138,11 +136,11 @@ DROP TABLE IF EXISTS `encuestataxista`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `encuestataxista` (
-  `EncuestaTaxista_ID` int(11) NOT NULL,
+  `EncuestaTaxista_ID` int(11) NOT NULL AUTO_INCREMENT,
   `Comentarios` varchar(50) DEFAULT NULL,
   `Calificacion` int(11) DEFAULT NULL,
   PRIMARY KEY (`EncuestaTaxista_ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -163,11 +161,11 @@ DROP TABLE IF EXISTS `tarifa`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tarifa` (
-  `Tarifa_ID` int(11) NOT NULL,
+  `Tarifa_ID` int(11) NOT NULL AUTO_INCREMENT,
   `Multiplicador` float DEFAULT NULL,
   `CostoPorKm` float DEFAULT NULL,
   PRIMARY KEY (`Tarifa_ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -188,7 +186,7 @@ DROP TABLE IF EXISTS `tarjeta`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tarjeta` (
-  `Tarjeta_ID` int(11) NOT NULL,
+  `Tarjeta_ID` int(11) NOT NULL AUTO_INCREMENT,
   `Cliente_ID` int(11) DEFAULT NULL,
   `Tipo` varchar(50) DEFAULT NULL,
   `Numero` varchar(50) DEFAULT NULL,
@@ -196,7 +194,7 @@ CREATE TABLE `tarjeta` (
   PRIMARY KEY (`Tarjeta_ID`),
   KEY `Cliente_ID` (`Cliente_ID`),
   CONSTRAINT `tarjeta_ibfk_1` FOREIGN KEY (`Cliente_ID`) REFERENCES `cliente` (`Cliente_ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -217,7 +215,7 @@ DROP TABLE IF EXISTS `taxista`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `taxista` (
-  `Taxista_ID` int(11) NOT NULL,
+  `Taxista_ID` int(11) NOT NULL AUTO_INCREMENT,
   `Estatus` bit(1) DEFAULT NULL,
   `Usuario` varchar(50) DEFAULT NULL,
   `Contrasena` varchar(50) DEFAULT NULL,
@@ -226,7 +224,7 @@ CREATE TABLE `taxista` (
   `Telefono` varchar(50) DEFAULT NULL,
   `Rating` float DEFAULT NULL,
   PRIMARY KEY (`Taxista_ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -235,7 +233,7 @@ CREATE TABLE `taxista` (
 
 LOCK TABLES `taxista` WRITE;
 /*!40000 ALTER TABLE `taxista` DISABLE KEYS */;
-INSERT INTO `taxista` VALUES (1,'','Taxi','12345678990','Pancho Tijerina','panchillo80@hotmail.com','5434512',2),(2,'','GreatTaxi','hola99hola','Maria Dolores de Panza','mariadoloresdp@live.com','5434513',0),(3,'','UltraTaxi','taxicashmoney','Venustiano Hidalgo','venustianohi@hotmail.com','5434514',0),(4,'','MasterTaxi','TaxiMaestro','Adolfo Porfirio Mussolini','adopormus@live.com','5434515',0),(5,'\0','NetTaxi','denmelanaporfa','Juan de la Parrila','mariadoloresdp@live.com','5434513',0),(6,'\0','1','1','backdoor','backdoor@mail.com','11111111',0);
+INSERT INTO `taxista` VALUES (1,'','Taxi','12345678990','Pancho Tijerina','panchillo80@hotmail.com','5434512',0),(2,'','GreatTaxi','hola99hola','Maria Dolores de Panza','mariadoloresdp@live.com','5434513',0),(3,'','UltraTaxi','taxicashmoney','Venustiano Hidalgo','venustianohi@hotmail.com','5434514',0),(4,'','MasterTaxi','TaxiMaestro','Adolfo Porfirio Mussolini','adopormus@live.com','5434515',0),(5,'\0','NetTaxi','denmelanaporfa','Juan de la Parrila','mariadoloresdp@live.com','5434513',0),(6,'','1','1','dummy','dummy@gmail.com','0000000000',0),(7,'','melvin','chocokrispis','melvinp','choco@gmail.com','88888882',0);
 /*!40000 ALTER TABLE `taxista` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -247,7 +245,7 @@ DROP TABLE IF EXISTS `viaje`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `viaje` (
-  `Viaje_ID` int(11) NOT NULL,
+  `Viaje_ID` int(11) NOT NULL AUTO_INCREMENT,
   `Taxista_ID` int(11) DEFAULT NULL,
   `Cliente_ID` int(11) DEFAULT NULL,
   `Tarifa_ID` int(11) DEFAULT NULL,
@@ -271,7 +269,7 @@ CREATE TABLE `viaje` (
   CONSTRAINT `viaje_ibfk_3` FOREIGN KEY (`Taxista_ID`) REFERENCES `taxista` (`Taxista_ID`),
   CONSTRAINT `viaje_ibfk_4` FOREIGN KEY (`Cliente_ID`) REFERENCES `cliente` (`Cliente_ID`),
   CONSTRAINT `viaje_ibfk_5` FOREIGN KEY (`Tarifa_ID`) REFERENCES `tarifa` (`Tarifa_ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -280,7 +278,7 @@ CREATE TABLE `viaje` (
 
 LOCK TABLES `viaje` WRITE;
 /*!40000 ALTER TABLE `viaje` DISABLE KEYS */;
-INSERT INTO `viaje` VALUES (1,1,1,1,'Monterrey','Houston','Terminado','2018-01-20 08:00:30',732.3,14792.5,'MasterCard',1,1),(2,2,2,2,'Monterrey','Buenos Aires','Terminado','2018-01-22 10:02:30',8024,0,'Visa',2,2),(3,3,3,3,'Monterrey','Saltillo','Terminado','2018-02-10 12:10:45',50,0,'MasterCard',3,3),(4,4,4,4,'Ciudad de Mexico','Guadalajara','Terminado','2018-01-30 00:00:00',535.6,0,'MasterCard',4,4),(5,5,5,5,'Guadalajara','Laredo','Terminado','2018-01-20 08:00:30',1005.2,0,'Visa',5,5),(6,1,2,1,'Monterrey','Laredo','Agendado','2018-02-02 06:02:15',224.7,0,'MasterCard',NULL,NULL),(7,3,4,4,'Seattle','Houston','EnProgreso','2018-01-20 08:00:30',3761.3,0,'Visa',NULL,NULL),(8,2,1,2,'Chicago','Baja California','Cancelado','2018-01-20 08:00:30',2745,0,'Visa',NULL,NULL);
+INSERT INTO `viaje` VALUES (1,1,1,1,'Monterrey','Houston','Terminado','2018-01-20 08:00:30',732.3,0,'MasterCard',1,1),(2,2,2,2,'Monterrey','Buenos Aires','Terminado','2018-01-22 10:02:30',8024,0,'Visa',2,2),(3,3,3,3,'Monterrey','Saltillo','Terminado','2018-02-10 12:10:45',50,0,'MasterCard',3,3),(4,4,4,4,'Ciudad de Mexico','Guadalajara','Terminado','2018-01-30 00:00:00',535.6,0,'MasterCard',4,4),(5,5,5,5,'Guadalajara','Laredo','Terminado','2018-01-20 08:00:30',1005.2,0,'Visa',5,5),(6,1,2,1,'Monterrey','Laredo','Agendado','2018-02-02 06:02:15',224.7,0,'MasterCard',NULL,NULL),(7,3,4,4,'Seattle','Houston','EnProgreso','2018-01-20 08:00:30',3761.3,0,'Visa',NULL,NULL),(8,2,1,2,'Chicago','Baja California','Cancelado','2018-01-20 08:00:30',2745,0,'Visa',NULL,NULL);
 /*!40000 ALTER TABLE `viaje` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -602,9 +600,10 @@ DELIMITER ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `crear_cliente`()
+CREATE DEFINER=`root`@`localhost` PROCEDURE `crear_cliente`(IN usuario_cliente VARCHAR(50), IN contrasena_cliente VARCHAR(50), IN nombre_cliente VARCHAR(50), IN correo_cliente VARCHAR(50), IN telefono_cliente VARCHAR(50))
 BEGIN
-INSERT INTO Cliente(Cliente_ID, Estatus, Usuario, Contrasena, Nombre, Correo, Telefono, Rating) VALUES(id_cliente, 1, usuario_cliente, contrasena_cliente, nombre_cliente, correo_cliente, telefono_cliente, 0);
+INSERT INTO Cliente(Estatus, Usuario, Contrasena, Nombre, Correo, Telefono, Rating) 
+		VALUES(1, usuario_cliente, contrasena_cliente, nombre_cliente, correo_cliente, telefono_cliente, 0);
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -621,9 +620,13 @@ DELIMITER ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `crear_taxista`()
+CREATE DEFINER=`root`@`localhost` PROCEDURE `crear_taxista`(IN usuario_taxista VARCHAR(50), IN contrasena_taxista VARCHAR(50), IN nombre_taxista VARCHAR(50), IN correo_taxista VARCHAR(50), IN telefono_taxista VARCHAR(50), IN marca_carro VARCHAR(50), IN placa_carro VARCHAR(50), IN modelo_carro VARCHAR(50), IN color_carro VARCHAR(50), IN año_carro VARCHAR(50))
 BEGIN
-INSERT INTO Taxista(Taxista_ID, Estatus, Usuario, Contrasena, Nombre, Correo, Telefono, Rating) VALUES(id_taxista, 1, usuario_taxista, contrasena_taxista, nombre_taxista, correo_taxista, telefono_taxista, 0);
+INSERT INTO Taxista(Estatus, Usuario, Contrasena, Nombre, Correo, Telefono, Rating) 
+		VALUES(1, usuario_taxista, contrasena_taxista, nombre_taxista, correo_taxista, telefono_taxista, 0);
+SET @id := (SELECT MAX(Taxista_ID) FROM Taxista);
+INSERT INTO Carro(Placa, Taxista_ID, Marca, Modelo, Año, Color) 
+		VALUES(placa_carro, @id, marca_carro, modelo_carro, año_carro, color_carro);
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -855,6 +858,8 @@ DELIMITER ;
 /*!50003 SET collation_connection  = utf8_general_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+CREATE DATABASE IF NOT EXISTS taxiunico;
+USE taxiunico;
 DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `get_viajes_encuestas_cliente`(IN id_cliente INT)
 BEGIN
@@ -961,12 +966,12 @@ DELIMITER ;
 DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `view_viajes`()
 BEGIN
-  SELECT ViajeCliente.Nombre as "Cliente", Taxista.Nombre as "Taxista", Origen, Destino, Fecha, ViajeCliente.Estatus, ViajeCliente.Rating as "Rating Cliente", Taxista.Rating as "Rating Taxista", Distancia, Costo
+	SELECT ViajeCliente.Nombre as "Cliente", Taxista.Nombre as "Taxista", Origen, Destino, Fecha, ViajeCliente.Estatus, ViajeCliente.Rating as "Rating Cliente", Taxista.Rating as "Rating Taxista", Distancia, Costo
     FROM (
-      SELECT Taxista_ID, Cliente.Nombre, Cliente.Rating, Origen, Destino, Fecha, Viaje.Estatus, Distancia, Costo
+			SELECT Taxista_ID, Cliente.Nombre, Cliente.Rating, Origen, Destino, Fecha, Viaje.Estatus, Distancia, Costo
             FROM Viaje JOIN Cliente ON Viaje.Cliente_ID = Cliente.Cliente_ID
-    ) as ViajeCliente
-  JOIN Taxista ON ViajeCliente.Taxista_ID = Taxista.Taxista_ID;
+		) as ViajeCliente
+	JOIN Taxista ON ViajeCliente.Taxista_ID = Taxista.Taxista_ID;
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -983,4 +988,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-11-28 14:10:13
+-- Dump completed on 2018-11-28 20:36:47

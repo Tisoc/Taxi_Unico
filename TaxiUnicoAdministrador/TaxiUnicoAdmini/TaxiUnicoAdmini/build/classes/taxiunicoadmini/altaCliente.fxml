@@ -21,6 +21,7 @@
             <Font name="System Bold" size="31.0" />
          </font>
       </Text>
+<<<<<<< HEAD
       <Button layoutX="525.0" layoutY="361.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="191.0" style="-fx-background-color: #669999;" text="Registrar" textFill="#faf4f4">
          <font>
             <Font name="Agency FB Bold" size="28.0" />
@@ -38,6 +39,22 @@
             <InnerShadow />
          </effect></TextField>
       <TextField layoutX="753.0" layoutY="298.0">
+=======
+      <Button layoutX="482.0" layoutY="334.0" mnemonicParsing="false" onAction="#darDeAltaCliente" prefHeight="40.0" prefWidth="115.0" text="Registrar" />
+      <TextField fx:id="tfTelefono" layoutX="339.0" layoutY="214.0">
+         <effect>
+            <InnerShadow />
+         </effect></TextField>
+      <TextField fx:id="tfCorreo" layoutX="339.0" layoutY="272.0">
+         <effect>
+            <InnerShadow />
+         </effect></TextField>
+      <TextField fx:id="tfUsuario" layoutX="684.0" layoutY="157.0">
+         <effect>
+            <InnerShadow />
+         </effect></TextField>
+      <TextField fx:id="tfContrasena" layoutX="684.0" layoutY="214.0">
+>>>>>>> 4dfb38b43df530b1bc0754455b9df3008a67094f
          <effect>
             <InnerShadow />
          </effect></TextField>
@@ -56,16 +73,33 @@
             <Font name="Agency FB Bold" size="30.0" />
          </font>
       </Text>
+<<<<<<< HEAD
       <Text fill="WHITE" layoutX="611.0" layoutY="268.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Usuario:" wrappingWidth="84.68073272705078">
          <font>
             <Font name="Agency FB Bold" size="29.0" />
          </font>
       </Text>
       <Text fill="WHITE" layoutX="615.0" layoutY="322.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contraseña:" wrappingWidth="141.48072052001953">
+=======
+      <Text layoutX="611.0" layoutY="176.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Usuario:" wrappingWidth="84.68073272705078">
+>>>>>>> 4dfb38b43df530b1bc0754455b9df3008a67094f
          <font>
             <Font name="Agency FB Bold" size="29.0" />
          </font>
       </Text>
+<<<<<<< HEAD
+=======
+      <Text layoutX="581.0" layoutY="232.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contraseña:" wrappingWidth="85.00000751018524">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="33.0" fitWidth="186.0" layoutX="708.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/logotrans.png" />
+         </image>
+      </ImageView>
+>>>>>>> 4dfb38b43df530b1bc0754455b9df3008a67094f
       <AnchorPane prefHeight="508.0" prefWidth="200.0" style="-fx-background-color: grey;">
          <children>
             <AnchorPane layoutY="62.0" opacity="0.33" prefHeight="67.0" prefWidth="200.0" style="-fx-background-color: black;">
@@ -102,7 +136,11 @@
                </font></Button>
          </children>
       </AnchorPane>
+<<<<<<< HEAD
       <TextField layoutX="431.0" layoutY="193.0">
+=======
+      <TextField fx:id="tfNombre" layoutX="339.0" layoutY="157.0">
+>>>>>>> 4dfb38b43df530b1bc0754455b9df3008a67094f
          <effect>
             <InnerShadow />
          </effect>

@@ -1,0 +1,2 @@
+allDB.sql es para ser importado en MySQLWorkbench y crear la base de datos, con todo y procedimientos almacenados e inserts.
+createANDinserts.sql es el script para reiniciar las tablas e inserts en caso de ser necesario.
