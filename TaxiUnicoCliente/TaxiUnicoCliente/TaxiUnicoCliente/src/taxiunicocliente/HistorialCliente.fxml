@@ -10,17 +10,22 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="674.0" prefWidth="476.0" style="-fx-background-color: #192a3d;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="taxiunicocliente.HistorialClienteController">
+<AnchorPane id="AnchorPane" prefHeight="777.0" prefWidth="560.0" style="-fx-background-color: #192a3d;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="taxiunicocliente.HistorialClienteController">
     <children>
+      <ImageView fitHeight="726.0" fitWidth="560.0" layoutY="54.0" pickOnBounds="true">
+         <image>
+            <Image url="@../img/clienteback1.jpg" />
+         </image>
+      </ImageView>
         <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
-      <Text fill="#faf2f2" fontSmoothingType="LCD" layoutX="138.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Historial" textAlignment="CENTER" wrappingWidth="223.20000338554382">
+      <Text fill="#faf2f2" fontSmoothingType="LCD" layoutX="170.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Historial" textAlignment="CENTER" wrappingWidth="223.20000338554382">
          <font>
-            <Font name="Book Antiqua" size="41.0" />
+            <Font name="Agency FB" size="53.0" />
          </font>
       </Text>
-      <AnchorPane prefHeight="54.0" prefWidth="476.0" style="-fx-background-color: black;">
+      <AnchorPane prefHeight="54.0" prefWidth="560.0" style="-fx-background-color: black;">
          <children>
-            <Button layoutX="364.0" layoutY="13.0" mnemonicParsing="false" onAction="#salirApp" prefHeight="26.0" prefWidth="90.0" style="-fx-background-color: #192a3d;" text="Salir" textFill="#f8efef">
+            <Button layoutX="455.0" layoutY="12.0" mnemonicParsing="false" onAction="#salirApp" prefHeight="26.0" prefWidth="90.0" style="-fx-background-color: #192a3d;" text="Salir" textFill="#f8efef">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font></Button>
@@ -31,35 +36,35 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <Button layoutX="167.0" layoutY="486.0" mnemonicParsing="false" onAction="#volverDetalle" prefHeight="30.0" prefWidth="142.0" style="-fx-background-color: #40caee;" text="Tu Viaje Actual">
+      <Button layoutX="178.0" layoutY="532.0" mnemonicParsing="false" onAction="#volverDetalle" prefHeight="43.0" prefWidth="198.0" style="-fx-background-color: white;" text="Tu Viaje Actual">
          <font>
-            <Font name="System Bold" size="14.0" />
+            <Font name="Agency FB Bold" size="21.0" />
          </font></Button>
-      <Button layoutX="167.0" layoutY="536.0" mnemonicParsing="false" onAction="#cambiarPerfil" prefHeight="30.0" prefWidth="142.0" style="-fx-background-color: #40caee;" text="Configurar Perfil">
+      <Button layoutX="178.0" layoutY="588.0" mnemonicParsing="false" onAction="#cambiarPerfil" prefHeight="40.0" prefWidth="198.0" style="-fx-background-color: white;" text="Configurar Perfil">
          <font>
-            <Font name="System Bold" size="14.0" />
+            <Font name="Agency FB Bold" size="22.0" />
          </font></Button>
-      <TableView fx:id="tableView" editable="true" layoutX="18.0" layoutY="120.0" prefHeight="342.0" prefWidth="443.0">
+      <TableView fx:id="tableView" editable="true" layoutX="18.0" layoutY="120.0" prefHeight="393.0" prefWidth="528.0">
         <columns>
-          <TableColumn fx:id="viajeFecha" prefWidth="77.0" text="Fecha" />
-          <TableColumn fx:id="viajeOrigen" prefWidth="72.0" text="Origen" />
-            <TableColumn fx:id="viajeDestino" prefWidth="84.0" text="Destino" />
-            <TableColumn fx:id="taxistaNombre" prefWidth="66.0" text="Taxista" />
-            <TableColumn fx:id="viajeDistancia" prefWidth="70.0" text="Distancia" />
-            <TableColumn fx:id="viajeCosto" prefWidth="73.0" text="Costo" />
+          <TableColumn fx:id="viajeFecha" prefWidth="85.59997940063477" text="Fecha" />
+          <TableColumn fx:id="viajeOrigen" prefWidth="84.800048828125" text="Origen" />
+            <TableColumn fx:id="viajeDestino" prefWidth="88.79997253417969" text="Destino" />
+            <TableColumn fx:id="taxistaNombre" prefWidth="85.60003662109375" text="Taxista" />
+            <TableColumn fx:id="viajeDistancia" prefWidth="92.0" text="Distancia" />
+            <TableColumn fx:id="viajeCosto" prefWidth="92.7999267578125" text="Costo" />
         </columns>
       </TableView>
-      <Text fill="#f2eded" layoutX="189.0" layoutY="594.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Algun Problema?" wrappingWidth="98.936767578125">
+      <Text fill="#f2eded" layoutX="203.0" layoutY="678.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Algun Problema?" wrappingWidth="157.3367919921875">
          <font>
-            <Font size="13.0" />
+            <Font name="Agency FB" size="28.0" />
          </font>
       </Text>
-      <Text fill="#f5eded" layoutX="144.0" layoutY="614.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contacta a un Administrador!" underline="true" wrappingWidth="190.13671875">
+      <Text fill="#f5eded" layoutX="186.0" layoutY="700.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contacta a un Administrador!" underline="true" wrappingWidth="190.13671875">
          <font>
             <Font size="14.0" />
          </font>
       </Text>
-      <ImageView fitHeight="30.0" fitWidth="244.0" layoutX="116.0" layoutY="630.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="30.0" fitWidth="244.0" layoutX="160.0" layoutY="718.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../img/logotrans.png" />
          </image>

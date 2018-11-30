@@ -8,43 +8,48 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="632.0" prefWidth="440.0" style="-fx-background-color: #192a3d;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="taxiunicocliente.ProximoViajeController">
+<AnchorPane id="AnchorPane" prefHeight="788.0" prefWidth="554.0" style="-fx-background-color: #192a3d;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="taxiunicocliente.ProximoViajeController">
     <children>
+      <ImageView fitHeight="737.0" fitWidth="554.0" layoutY="54.0" pickOnBounds="true">
+         <image>
+            <Image url="@../img/clienteback1.jpg" />
+         </image>
+      </ImageView>
         <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
-      <Text fill="WHITE" fontSmoothingType="LCD" layoutX="126.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bienvenido" textAlignment="CENTER" wrappingWidth="223.20000338554382">
+      <Text fill="WHITE" fontSmoothingType="LCD" layoutX="165.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bienvenido" textAlignment="CENTER" wrappingWidth="223.20000338554382">
          <font>
-            <Font name="Book Antiqua" size="41.0" />
+            <Font name="Agency FB" size="56.0" />
          </font>
       </Text>
-      <Text fill="#fdf9f9" layoutX="163.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tu Próximo Viaje" wrappingWidth="148.53790283203125">
+      <Text fill="#fdf9f9" layoutX="200.0" layoutY="146.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tu Próximo Viaje" wrappingWidth="176.00000552128222">
          <font>
-            <Font size="18.0" />
+            <Font size="22.0" />
          </font>
       </Text>
-      <ImageView fitHeight="275.0" fitWidth="382.0" layoutX="44.0" layoutY="146.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="333.0" fitWidth="419.0" layoutX="79.0" layoutY="164.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../img/clienteproxviaje.png" />
          </image>
       </ImageView>
-      <AnchorPane prefHeight="54.0" prefWidth="440.0" style="-fx-background-color: black;">
+      <AnchorPane prefHeight="54.0" prefWidth="554.0" style="-fx-background-color: black;">
          <children>
-            <Button layoutX="337.0" layoutY="13.0" mnemonicParsing="false" onAction="#salirApp" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #192a3d;" text="Salir" textFill="#fdf8f8">
+            <Button layoutX="441.0" layoutY="12.0" mnemonicParsing="false" onAction="#salirApp" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #192a3d;" text="Salir" textFill="#fdf8f8">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font></Button>
          </children>
       </AnchorPane>
-      <Button layoutX="55.0" layoutY="524.0" mnemonicParsing="false" onAction="#cambiarHistorial" prefHeight="30.0" prefWidth="142.0" style="-fx-background-color: #40caee;" text="Historial de Viaje">
+      <Button layoutX="97.0" layoutY="625.0" mnemonicParsing="false" onAction="#cambiarHistorial" prefHeight="39.0" prefWidth="166.0" style="-fx-background-color: white;" text="Historial de Viaje">
          <font>
-            <Font name="System Bold" size="13.0" />
+            <Font name="Agency FB Bold" size="21.0" />
          </font></Button>
-      <Button layoutX="247.0" layoutY="524.0" mnemonicParsing="false" onAction="#cambiarPerfil" prefHeight="30.0" prefWidth="142.0" style="-fx-background-color: #40caee;" text="Configurar Perfil">
+      <Button layoutX="327.0" layoutY="625.0" mnemonicParsing="false" onAction="#cambiarPerfil" prefHeight="39.0" prefWidth="166.0" style="-fx-background-color: white;" text="Configurar Perfil">
          <font>
-            <Font name="System Bold" size="12.0" />
+            <Font name="Agency FB Bold" size="21.0" />
          </font></Button>
-      <Button layoutX="247.0" layoutY="455.0" mnemonicParsing="false" onAction="#cancelarViaje" opacity="0.7" prefHeight="30.0" prefWidth="142.0" style="-fx-background-color: red;" text="Cancelar Viaje">
+      <Button layoutX="322.0" layoutY="537.0" mnemonicParsing="false" onAction="#cancelarViaje" prefHeight="39.0" prefWidth="176.0" style="-fx-background-color: red;" text="Cancelar Viaje">
          <font>
-            <Font name="System Bold" size="14.0" />
+            <Font name="Agency FB Bold" size="21.0" />
          </font>
       </Button>
       <ImageView fitHeight="54.0" fitWidth="199.0" pickOnBounds="true" preserveRatio="true">
@@ -52,12 +57,12 @@
             <Image url="@../img/logotaxi.png" />
          </image>
       </ImageView>
-      <Button layoutX="55.0" layoutY="455.0" mnemonicParsing="false" onAction="#verDetalle" prefHeight="30.0" prefWidth="142.0" style="-fx-background-color: #40caee;" text="Detalle de Tu Viaje">
+      <Button layoutX="92.0" layoutY="537.0" mnemonicParsing="false" onAction="#verDetalle" prefHeight="39.0" prefWidth="176.0" style="-fx-background-color: white;" text="Detalle de Tu Viaje">
          <font>
-            <Font name="System Bold" size="13.0" />
+            <Font name="Agency FB Bold" size="20.0" />
          </font>
       </Button>
-      <ImageView fitHeight="39.0" fitWidth="214.0" layoutX="113.0" layoutY="591.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="39.0" fitWidth="214.0" layoutX="170.0" layoutY="738.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../img/logotrans.png" />
          </image>

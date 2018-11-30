@@ -8,28 +8,40 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="635.0" prefWidth="418.0" style="-fx-background-color: #192a3d;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="taxiunicocliente.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="779.0" prefWidth="520.0" style="-fx-background-color: #192a3d;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="taxiunicocliente.FXMLDocumentController">
     <children>
+      <ImageView fitHeight="779.0" fitWidth="520.0" pickOnBounds="true">
+         <image>
+            <Image url="@../img/clienteback1.jpg" />
+         </image>
+      </ImageView>
         <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
-      <TextField fx:id="username" layoutX="97.0" layoutY="460.0" prefHeight="32.0" prefWidth="223.0" promptText="Usuario/Email" />
-      <PasswordField fx:id="password" layoutX="97.0" layoutY="509.0" prefHeight="32.0" prefWidth="223.0" promptText="Contraseña" />
-      <Button layoutX="149.0" layoutY="564.0" mnemonicParsing="false" onAction="#changeScreenButtonPushed" prefHeight="18.0" prefWidth="109.0" text="Ingresar" />
-      <ImageView fitHeight="225.0" fitWidth="337.0" layoutX="44.0" layoutY="205.0" pickOnBounds="true" preserveRatio="true">
+      <TextField fx:id="username" layoutX="156.0" layoutY="540.0" prefHeight="32.0" prefWidth="223.0" promptText="Usuario/Email" />
+      <PasswordField fx:id="password" layoutX="156.0" layoutY="595.0" prefHeight="32.0" prefWidth="223.0" promptText="Contraseña" />
+      <Button layoutX="177.0" layoutY="659.0" mnemonicParsing="false" onAction="#changeScreenButtonPushed" prefHeight="43.0" prefWidth="170.0" style="-fx-background-color: white;" text="Ingresar">
+         <font>
+            <Font name="Agency FB Bold" size="22.0" />
+         </font></Button>
+      <ImageView fitHeight="336.0" fitWidth="354.0" layoutX="83.0" layoutY="182.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../img/clientesignin.jpg" />
+            <Image url="@../img/Mapa.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="150.0" fitWidth="266.0" layoutX="82.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="150.0" fitWidth="342.0" layoutX="100.0" layoutY="54.0" pickOnBounds="true">
          <image>
-            <Image url="@../img/logotaxi.png" />
+            <Image url="@../img/LogoTransparente.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="32.0" fitWidth="200.0" layoutX="115.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="32.0" fitWidth="200.0" layoutX="171.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../img/logotrans.png" />
          </image>
       </ImageView>
-      <Hyperlink layoutX="115.0" layoutY="597.0" onAction="#cambiarCont" text="¿Olvidaste tu Contraseña?" textFill="#f5eded" />
+      <Hyperlink layoutX="171.0" layoutY="737.0" onAction="#cambiarCont" text="¿Olvidaste tu Contraseña?" textFill="#ede6e6" underline="true">
+         <font>
+            <Font size="14.0" />
+         </font></Hyperlink>
     </children>
 </AnchorPane>

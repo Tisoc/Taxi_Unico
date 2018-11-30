@@ -10,54 +10,64 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="645.0" prefWidth="441.0" style="-fx-background-color: #192a3d;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="taxiunicocliente.EncuestaController">
+<AnchorPane id="AnchorPane" prefHeight="762.0" prefWidth="530.0" style="-fx-background-color: #192a3d;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="taxiunicocliente.EncuestaController">
     <children>
+      <ImageView fitHeight="708.0" fitWidth="530.0" layoutY="54.0" pickOnBounds="true">
+         <image>
+            <Image url="@../img/clienteback1.jpg" />
+         </image>
+      </ImageView>
         <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
-      <Text fill="#f2ecec" fontSmoothingType="LCD" layoutX="75.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ENCUESTA" textAlignment="CENTER" wrappingWidth="289.6000277996063">
+      <Text fill="#f2ecec" fontSmoothingType="LCD" layoutX="132.0" layoutY="143.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ENCUESTA" textAlignment="CENTER" wrappingWidth="289.6000277996063">
          <font>
-            <Font name="Book Antiqua" size="41.0" />
+            <Font name="Agency FB Bold" size="60.0" />
          </font>
       </Text>
-      <AnchorPane layoutY="-1.0" prefHeight="54.0" prefWidth="441.0" style="-fx-background-color: black;">
+      <AnchorPane layoutY="-1.0" prefHeight="54.0" prefWidth="530.0" style="-fx-background-color: black;">
          <children>
-            <Button layoutX="340.0" layoutY="13.0" mnemonicParsing="false" onAction="#salirApp" prefHeight="30.0" prefWidth="92.0" style="-fx-background-color: #192a3d;" text="Salir" textFill="#faf5f5">
+            <Button layoutX="424.0" layoutY="11.0" mnemonicParsing="false" onAction="#salirApp" prefHeight="30.0" prefWidth="92.0" style="-fx-background-color: #192a3d;" text="Salir" textFill="#faf5f5">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font></Button>
-            <ImageView fitHeight="54.0" fitWidth="128.0" layoutX="-6.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="72.0" fitWidth="128.0" layoutX="-6.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../img/logotaxi.png" />
                </image>
             </ImageView>
          </children>
       </AnchorPane>
-      <Button layoutX="143.0" layoutY="444.0" mnemonicParsing="false" onAction="#volverDetalle" prefHeight="30.0" prefWidth="142.0" style="-fx-background-color: #40caee;" text="Menu Principal">
+      <Button layoutX="183.0" layoutY="496.0" mnemonicParsing="false" onAction="#volverDetalle" prefHeight="42.0" prefWidth="186.0" style="-fx-background-color: white;" text="Menu Principal">
          <font>
-            <Font name="System Bold" size="12.0" />
+            <Font name="Agency FB Bold" size="22.0" />
          </font></Button>
-      <Button layoutX="143.0" layoutY="495.0" mnemonicParsing="false" onAction="#cambiarPerfil" prefHeight="30.0" prefWidth="142.0" style="-fx-background-color: #40caee;" text="Configurar Perfil">
+      <Button layoutX="182.0" layoutY="573.0" mnemonicParsing="false" onAction="#cambiarPerfil" prefHeight="42.0" prefWidth="186.0" style="-fx-background-color: white;" text="Configurar Perfil">
          <font>
-            <Font name="System Bold" size="13.0" />
+            <Font name="Agency FB Bold" size="22.0" />
          </font></Button>
-      <AnchorPane layoutX="15.0" layoutY="139.0" opacity="0.2" prefHeight="278.0" prefWidth="411.0" style="-fx-background-color: black;" />
-      <Text fill="#fdfdfd" layoutX="165.0" layoutY="562.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Algun Problema?" wrappingWidth="128.1624755859375" />
-      <Text fill="#faf5f5" layoutX="136.0" layoutY="585.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contacta a un Administrador!" underline="true" wrappingWidth="206.1367068886757" />
-      <ImageView fitHeight="39.0" fitWidth="221.0" layoutX="110.0" layoutY="603.0" pickOnBounds="true" preserveRatio="true">
+      <Text fill="#fdfdfd" layoutX="196.0" layoutY="664.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Algun Problema?" wrappingWidth="186.40000568847427">
+         <font>
+            <Font size="24.0" />
+         </font></Text>
+      <Text fill="#faf5f5" layoutX="166.0" layoutY="688.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contacta a un Administrador!" underline="true" wrappingWidth="220.99999951467726">
+         <font>
+            <Font size="17.0" />
+         </font></Text>
+      <ImageView fitHeight="39.0" fitWidth="221.0" layoutX="159.0" layoutY="709.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../img/logotrans.png" />
          </image>
       </ImageView>
-      <Text fill="#faf8f8" layoutX="43.0" layoutY="185.0" strokeType="OUTSIDE" strokeWidth="0.0" text="¿Del 1 al 5 como Calificas a tu Taxista?">
+      <Text fill="#faf8f8" layoutX="44.0" layoutY="192.0" strokeType="OUTSIDE" strokeWidth="0.0" text="¿Del 1 al 5 como Calificas a tu Taxista?">
          <font>
-            <Font size="21.0" />
+            <Font name="System Bold" size="25.0" />
          </font>
       </Text>
-      <Text fill="#faf8f8" layoutX="133.0" layoutY="286.0" strokeType="OUTSIDE" strokeWidth="0.0" text="¿Comentarios?">
+      <TextField layoutX="114.0" layoutY="206.0" prefHeight="26.0" prefWidth="308.0" />
+      <TextArea layoutX="50.0" layoutY="294.0" prefHeight="178.0" prefWidth="442.0" />
+      <Text fill="#faf8f8" layoutX="177.0" layoutY="278.0" strokeType="OUTSIDE" strokeWidth="0.0" text="¿Comentarios?">
          <font>
-            <Font size="21.0" />
+            <Font name="System Bold" size="29.0" />
          </font>
       </Text>
-      <TextField layoutX="114.0" layoutY="206.0" prefHeight="26.0" prefWidth="199.0" />
-      <TextArea layoutX="50.0" layoutY="294.0" prefHeight="104.0" prefWidth="339.0" />
     </children>
 </AnchorPane>
