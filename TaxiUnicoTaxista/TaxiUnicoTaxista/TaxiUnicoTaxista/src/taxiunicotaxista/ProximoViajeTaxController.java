@@ -9,6 +9,7 @@ package taxiunicotaxista;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+import clases.Taxista;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.CallableStatement;
@@ -46,6 +47,7 @@ import taxiunicotaxista.dbconnection.DBConnection;
 public class ProximoViajeTaxController implements Initializable {
     DBConnection connectionClass = new DBConnection();
     Connection connection = connectionClass.getConnection();
+    CallableStatement statement;
   
     
       public void cambiarHistorial(ActionEvent event) throws IOException
@@ -132,8 +134,13 @@ public class ProximoViajeTaxController implements Initializable {
         window.show();
     }
         
-         public void finalizarViaje(ActionEvent event) throws IOException
+         public void finalizarViaje(ActionEvent event) throws IOException, SQLException
     {
+        statement = connection.prepareCall("{call terminarViaje_taxista(?)}");
+        statement.setInt(1, Taxista.getId_currTaxista());
+        
+        statement.execute();
+        
         Parent tableViewParent = FXMLLoader.load(getClass().getResource("ViajeFin.fxml"));
         Scene tableViewScene = new Scene(tableViewParent);
         

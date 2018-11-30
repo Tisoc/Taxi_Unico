@@ -9,6 +9,8 @@ package taxiunicotaxista;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+import clases.Cliente;
+import clases.Taxista;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.CallableStatement;
@@ -69,6 +71,16 @@ public class FXMLDocumentController implements Initializable {
                 System.out.println("pass:" + pass + "  " + "valid_pass:" + valid_pass);
                 if (valid_pass.equals(pass)) {
                     System.out.println("im in");
+                    
+                    statement = connection.prepareCall("{call getTaxistaID(?)}");
+                    statement.setString(1, user);
+                    statement.execute();
+                    ResultSet resultSetTaxistaID = statement.getResultSet();
+                    if (resultSetTaxistaID.next()) {
+                        int id_currTaxista = resultSetTaxistaID.getInt(1);
+                        Taxista.setId_currTaxista(id_currTaxista);
+                    }
+                    
                     Parent tableViewParent = FXMLLoader.load(getClass().getResource("ProximoViajeTax.fxml"));
                     Scene tableViewScene = new Scene(tableViewParent);
 

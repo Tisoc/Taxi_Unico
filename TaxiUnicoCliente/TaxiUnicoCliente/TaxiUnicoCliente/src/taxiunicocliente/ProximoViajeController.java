@@ -5,6 +5,8 @@
  */
 package taxiunicocliente;
 
+import clases.Cliente;
+import clases.Taxista;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.CallableStatement;
@@ -44,7 +46,8 @@ import taxiunicocliente.dbconnection.DBConnection;
 public class ProximoViajeController implements Initializable {
     DBConnection connectionClass = new DBConnection();
     Connection connection = connectionClass.getConnection();
-
+    CallableStatement statement;
+    
       public void cambiarHistorial(ActionEvent event) throws IOException
     {
         Parent tableViewParent = FXMLLoader.load(getClass().getResource("HistorialCliente.fxml"));
@@ -117,8 +120,13 @@ public class ProximoViajeController implements Initializable {
         window.show();
     }
         
-        public void cancelarViaje(ActionEvent event) throws IOException
+        public void cancelarViaje(ActionEvent event) throws IOException, SQLException
     {
+        statement = connection.prepareCall("{call cancelarViaje_cliente(?)}");
+        statement.setInt(1, Cliente.getId_currCliente());
+
+        statement.execute();
+        
         Parent tableViewParent = FXMLLoader.load(getClass().getResource("ViajeCan.fxml"));
         Scene tableViewScene = new Scene(tableViewParent);
         
