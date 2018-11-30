@@ -27,7 +27,14 @@ public class Viaje{
         this.Distancia = Distancia;
         this.Costo = Costo;
     }
-
+    
+    public Viaje(String Origen, String Destino, String Fecha, double Distancia, double Costo) {
+        this.Origen = Origen;
+        this.Destino = Destino;
+        this.Fecha = Fecha;
+        this.Distancia = Distancia;
+        this.Costo = Costo;
+    }
 	public String getOrigen(){
 		return Origen;
 	}

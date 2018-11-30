@@ -39,12 +39,14 @@
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Button>
-      <TableView editable="true" layoutX="18.0" layoutY="120.0" prefHeight="342.0" prefWidth="443.0">
+      <TableView fx:id="tableView" editable="true" layoutX="18.0" layoutY="120.0" prefHeight="342.0" prefWidth="443.0">
         <columns>
-          <TableColumn prefWidth="106.39996147155762" text="Fecha" />
-          <TableColumn prefWidth="105.60004425048828" text="Origen" />
-            <TableColumn prefWidth="112.79998779296875" text="Destino" />
-            <TableColumn prefWidth="122.4000244140625" text="Taxista" />
+          <TableColumn fx:id="viajeFecha" prefWidth="77.0" text="Fecha" />
+          <TableColumn fx:id="viajeOrigen" prefWidth="72.0" text="Origen" />
+            <TableColumn fx:id="viajeDestino" prefWidth="84.0" text="Destino" />
+            <TableColumn fx:id="taxistaNombre" prefWidth="66.0" text="Taxista" />
+            <TableColumn fx:id="viajeDistancia" prefWidth="70.0" text="Distancia" />
+            <TableColumn fx:id="viajeCosto" prefWidth="73.0" text="Costo" />
         </columns>
       </TableView>
       <Text fill="#f2eded" layoutX="189.0" layoutY="594.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Algun Problema?" wrappingWidth="98.936767578125">

@@ -5,11 +5,16 @@
  */
 package taxiunicocliente;
 
+import clases.Cliente;
+import clases.Historial;
+import clases.Taxista;
+import clases.Viaje;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -35,6 +40,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import taxiunicocliente.dbconnection.DBConnection;
 /**
@@ -44,7 +50,20 @@ import taxiunicocliente.dbconnection.DBConnection;
 public class DetalleViajeController implements Initializable {
     DBConnection connectionClass = new DBConnection();
     Connection connection = connectionClass.getConnection();
-
+    
+    @FXML
+    Text tOrigen;
+    @FXML
+    Text tDestino;
+    @FXML
+    Text tNombreTaxista;
+    @FXML
+    Text tTelefono;
+    @FXML
+    Text tRating;
+    @FXML
+    Text tPlacas;
+    
       public void cambiarHistorial(ActionEvent event) throws IOException
     {
         Parent tableViewParent = FXMLLoader.load(getClass().getResource("HistorialCliente.fxml"));
@@ -144,7 +163,77 @@ public class DetalleViajeController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        try {
+            CallableStatement statement = connection.prepareCall("{call get_viajeActual_cliente(?)}");
+            statement.setInt(1, Cliente.getId_currCliente());
+            statement.execute();
+            ResultSet rs = statement.getResultSet();
+            
+            ResultSetMetaData metaData = rs.getMetaData();
+            //obtener número de columna de cada atributo
+            int numCols = metaData.getColumnCount(); //number of column
+            int numColOrigen, numColDestino, numColFecha, numColNombreTaxista, numColTelefono, numColRating, numColPlacas;
+            numColOrigen = numColDestino = numColFecha = numColNombreTaxista = numColTelefono = numColRating = numColPlacas =1;
+
+            /*
+            ResultSetMetaData rsmd = resultSet.getMetaData();
+            int columnsNumber = rsmd.getColumnCount();
+            while (resultSet.next()) {
+                for (int i = 1; i <= columnsNumber; i++) {
+                    if (i > 1) {
+                        System.out.print(",  ");
+                    }
+                    String columnValue = resultSet.getString(i);
+                    System.out.print(columnValue + " " + rsmd.getColumnName(i));
+                }
+                System.out.println("");
+            }*/
+            for (int i = 1; i <= numCols; i++) {
+                String colName = metaData.getColumnLabel(i);
+                switch (colName) {
+                    case "Origen":
+                        numColOrigen = i;
+                        break;
+                    case "Destino":
+                        numColDestino = i;
+                        break;
+                    case "Fecha":
+                        numColFecha = i;
+                        break;
+                    case "Nombre":
+                        numColNombreTaxista = i;
+                        break;
+                    case "Telefono":
+                        numColTelefono = i;
+                        break;
+                    case "Rating":
+                        numColRating = i;
+                        break;
+                    case "Placa":
+                        numColPlacas = i;
+                        break;
+                }       
+            }
+            String origen, destino, fecha, nombreTaxista, telefono, rating, placa;
+            origen = destino = fecha = nombreTaxista = telefono = rating = placa = "null";
+            if (rs.next()) {
+                origen = "Origen: " + rs.getString(numColOrigen);
+                destino = "Destino: " + rs.getString(numColDestino);
+                fecha = "Fecha: " + rs.getString(numColFecha);
+                nombreTaxista = "Nombre Taxista: " + rs.getString(numColNombreTaxista);
+                telefono = "Telefono: " + rs.getString(numColTelefono);
+                rating = "Rating: " + rs.getString(numColRating);
+                placa = "Placas: " + rs.getString(numColPlacas);
+            }
+            tOrigen.setText(origen);
+            tDestino.setText(destino);
+            tNombreTaxista.setText(nombreTaxista);
+            tTelefono.setText(telefono);
+            tRating.setText(rating);
+            tPlacas.setText(placa);
+        } catch (SQLException ex) {
+            Logger.getLogger(DetalleViajeController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }    
     
 }

@@ -37,25 +37,24 @@
          <font>
             <Font name="System Bold" size="13.0" />
          </font></Button>
-      <AnchorPane layoutX="9.0" layoutY="158.0" opacity="0.2" prefHeight="234.0" prefWidth="422.0" style="-fx-background-color: black;" />
       <Text fill="#fdfdfd" layoutX="165.0" layoutY="562.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Algun Problema?" wrappingWidth="128.1624755859375" />
       <Text fill="#faf5f5" layoutX="136.0" layoutY="585.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contacta a un Administrador!" underline="true" wrappingWidth="206.1367068886757" />
-      <Text fill="#ede8e8" layoutX="23.0" layoutY="190.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" Origen: Real del Monte #123 Colonia Mitras" underline="true" wrappingWidth="358.93670047413906">
+      <Text fx:id="tOrigen" fill="#ede8e8" layoutX="23.0" layoutY="190.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" Origen: Real del Monte #123 Colonia Mitras" underline="true" wrappingWidth="358.93670047413906">
          <font>
             <Font size="17.0" />
          </font>
       </Text>
-      <Text fill="#f0e7e7" layoutX="26.0" layoutY="228.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Destino: Central Morelos" underline="true" wrappingWidth="340.9789123535156">
+      <Text fx:id="tDestino" fill="#f0e7e7" layoutX="26.0" layoutY="228.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Destino: Central Morelos" underline="true" wrappingWidth="340.9789123535156">
          <font>
             <Font size="17.0" />
          </font>
       </Text>
-      <Text fill="#f8f4f4" layoutX="28.0" layoutY="373.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Conductor: Patricio Hernandez" underline="true" wrappingWidth="325.3367416087944">
+      <Text fx:id="tTelefono" fill="#f8f4f4" layoutX="23.0" layoutY="316.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Teléfono: 88802735" underline="true" wrappingWidth="325.3367416087944">
          <font>
             <Font size="17.0" />
          </font>
       </Text>
-      <Text fill="#f8f1f1" layoutX="26.0" layoutY="268.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Seguno Destino: Cartagena #555 Colonia Diamantes" underline="true" wrappingWidth="275.73669347262415">
+      <Text fx:id="tNombreTaxista" fill="#f8f1f1" layoutX="26.0" layoutY="268.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre Taxista: " underline="true" wrappingWidth="275.73669347262415">
          <font>
             <Font size="17.0" />
          </font>
@@ -70,7 +69,12 @@
             <Image url="@../img/logotrans.png" />
          </image>
       </ImageView>
-      <Text fill="#f5f1f1" layoutX="26.0" layoutY="341.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hora de Salida: 7:50am" underline="true" wrappingWidth="233.8133087158203">
+      <Text fx:id="tRating" fill="#f8f4f4" layoutX="23.0" layoutY="361.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rating: 0" underline="true" wrappingWidth="325.3367416087944">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Text>
+      <Text fx:id="tPlacas" fill="#f8f4f4" layoutX="23.0" layoutY="395.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Placas: " underline="true" wrappingWidth="325.3367416087944">
          <font>
             <Font size="17.0" />
          </font>
