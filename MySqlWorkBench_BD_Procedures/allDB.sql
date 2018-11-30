@@ -19,8 +19,6 @@
 -- Table structure for table `administrador`
 --
 
-DROP DATABASE IF EXISTS taxiunico;
-CREATE DATABASE IF NOT EXISTS taxiunico;
 USE taxiunico;
 
 DROP TABLE IF EXISTS `administrador`;
